@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load socialaccount %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
 </head>
 <body>
     <h1>Login Page</h1>
+    <form  method="POST">
+        {% csrf_token %}
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="USERNAME_OR_EMAIL" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="PASSWORD" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h2>Google Login</h2>
+    <form action="{% provider_login_url 'google' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">CONTINUE WITH GOOGLE</button>
+    </form>
+
+    {% if user.is_authenticated %}
+    <p>You are signed in as {{user.email}}</p>
+    {% endif %}
+    {% if messages %}
+            {% for message in messages %}
+                <span {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+            {% endfor %}
+    {% endif %}
 </body>
 </html>

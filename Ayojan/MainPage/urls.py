@@ -6,6 +6,8 @@ from . import views
 #in the mainpage app URL goes like
 #        .../    just a slash.
 
+app_name = 'mainpage'
+
 urlpatterns = [
     path("",views.landing_view,name="mainpage"),
 ]
