@@ -1,0 +1,54 @@
+{% extends 'Booking/common.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div id="cart">
+            <h2>Booking List</h2>
+        
+            <!-- Venue Item -->
+            {% for booking in bookings %}
+                
+                <div class="cart-item">                
+                    
+                    <h2>{{booking.venue.venue_name}}</h2>
+                    <p>Location: {{booking.venue.city}}, {{booking.venue.state}}, {{booking.venue.address}}</p>
+                    <p>Price: {{booking.total_price}}</p>
+        
+                </div>
+        
+            {% endfor %}
+        
+                <!-- Photographer Item -->
+            <div class="cart-item">
+                <h3>Photographer Name</h3>
+                <p>Package: Wedding Photography</p>
+                <p>Price: $500</p>
+            </div>
+        
+        
+            <!-- Caterer Item -->
+            <div class="cart-item">
+                <h3>Caterer Name</h3>
+                <p>Package: Full Catering Service</p>
+                <p>Price: $800</p>
+            </div>
+        
+            <!-- Additional Items as needed -->
+        
+            <div id="total-price">
+                <p>Total Price: $2300</p>
+            </div>
+        
+            <form method="POST" action="{% url 'Booking:checkout' %}">
+                {% csrf_token %}
+                {% for booking in bookings %}
+                    <input type="hidden" name="booking_ids" value="{{ booking.id }}">
+                {% endfor %}
+                <button id="checkout-button" type="submit">Proceed to Checkout</button>
+            </form>
+        </div>
+    {% else %}
+        <div><h1>Login to see What's in your Booking List</h1></div>
+    {% endif %}
+{% endblock content %}

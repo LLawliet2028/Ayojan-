@@ -14,7 +14,9 @@ from Ayojan import settings
 
 #below funciton loads up profile_view html
 def profile_view(request):
+
     return render(request, 'Accounts/profile_view.html')
+
 
 #below funciton loads up login_page html
 def login_view(request):
@@ -116,3 +118,9 @@ def activate_acc(request, uidb64, token):
         return redirect('mainpage:mainpage')
     else:
         return render(request,'activation_failed.html')
+
+
+
+def signout(request):
+    logout(request)
+    return redirect('mainpage:mainpage')

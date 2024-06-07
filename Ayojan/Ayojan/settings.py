@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from . info import *
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,6 +46,7 @@ SITE_ID = 2
 INSTALLED_APPS = [
     'Accounts',
     'MainPage',
+    'Booking',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -170,3 +171,8 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL = '/account/login/'
+
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

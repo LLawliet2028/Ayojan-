@@ -1,0 +1,54 @@
+{% extends 'Booking/common.html' %}
+
+{% block content %}
+    <header>
+        <h1>Venue Booking</h1>
+        <div class="search-container">
+            <form id="search-form" method="GET">
+                <div class="search-bar">
+                    <input type="text" id="search-bar" name="search" placeholder="Search for venues..." autocomplete="off">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+            <form id="filter-form" name = "filter" method="GET">
+                <div class="filters">
+                    <h3>Filters</h3>
+                    <div class="filter">
+                        <label for="baseprice">Base Price:</label>
+                        <input type="number" id="baseprice" name="baseprice" placeholder="Enter maximum price">
+                    </div>
+                    <div class="filter">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" placeholder="Enter city">
+                    </div>
+                    <div class="filter">
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" placeholder="Enter state">
+                    </div>
+                </div>
+                <button type="submit">Apply Filters</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section id="venue-list">
+            {% for venue in venues %}
+            <div class="venue-item">
+                <h2>{{venue.venue_name}}</h2>
+                <p>Location: {{venue.city}}, {{venue.state}}, {{venue.address}}</p>
+                <p>Description: {{venue.description}}</p>
+                <p>Price: {{venue.base_price}}</p>
+                
+                {% if user.is_authenticated %}
+                    <a href="{% url 'Booking:booking_form' venue.id %}"><button>Book Now</button></a>
+                {% else %}
+                    <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
+                {% endif %}
+
+                <a href="{% url 'Booking:venuepage' venue.id %}"><button>View</button></a>
+                <a href="{% url 'Booking:bookinglistadder' venue.id %}"><button>Add to Booking List</button></a>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock content %}
