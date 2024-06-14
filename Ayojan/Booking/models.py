@@ -59,11 +59,36 @@ class Review(models.Model):
     def __str__(self):
         return f'Review for {self.venue.venue_name} by {self.user.username}'
     
+class Professional(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255,blank=True)
+    city = models.CharField(max_length=255,blank=True)
+    state = models.CharField(max_length=255,blank=True)
+    profession = models.CharField(max_length=255)
+    price_range = models.DecimalField(max_digits=10, decimal_places=2)
+    portfolio = models.URLField()
+    availability = models.BooleanField()
+
+    def __str__(self):
+        return self.name
+
+class ProfessionalReview(models.Model):
+    professional = models.ForeignKey(Professional, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField()
+    comment = models.TextField()
+    date_posted = models.DateField()
+
+    def __str__(self):
+        return f'Review for {self.professional.name} by {self.user.username}'
+    
+
 
 #Below i have created the booking model that keep all the details about the booking for a particular venue done by the user
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    venue = models.ForeignKey(Venues, on_delete=models.CASCADE)
+    venue = models.ForeignKey(Venues, on_delete=models.CASCADE,null=True,blank=True)
+    professional = models.ForeignKey(Professional, on_delete=models.CASCADE,null=True,blank=True)
     
     #Feilds to be filled by user and shown to them
     start_date = models.DateField(blank=True, null=True)
@@ -76,9 +101,12 @@ class Booking(models.Model):
     additional_services = models.TextField(blank=True)
     
     #Feilds to be only shown to the users
-    total_price = models.DecimalField(max_digits=10, decimal_places=2,blank=True, null=True)
+    total_price = models.DecimalField(max_digits=1000, decimal_places=2,blank=True, null=True)
     payment_status = models.CharField(max_length=50)
     booking_status = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.venue.venue_name} - {self.start_date} to {self.end_date}'
+        return f'{self.user.username} - {self.start_date} to {self.end_date}'
+    
+
+

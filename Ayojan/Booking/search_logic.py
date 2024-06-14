@@ -1,5 +1,6 @@
 from django.db.models import Q
 from .models import *
+from django.core.paginator import Paginator
 
 def search_venues(request):
     if 'search' in request.GET or 'baseprice' in request.GET:
@@ -29,6 +30,9 @@ def search_venues(request):
                 filters &= Q(base_price__lte=base_price)
             except ValueError:
                 pass
-
+        
+        if not (city and state and base_price and search_query):  
+            return None
+        
         search_results = Venues.objects.filter(filters)
         return search_results

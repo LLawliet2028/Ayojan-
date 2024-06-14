@@ -14,8 +14,11 @@ urlpatterns = [
     path("list/",views.cartpage,name="cartpage"),
     path("succefullyadded/<int:venue_id>",views.bookinglistadder,name="bookinglistadder"),
     path('search-suggestions/', views.search_suggestions, name='search_suggestions'),
-    path('checkout/',views.checkout_verification,name="checkout")
-
+    path('checkout/',views.checkout_verification,name="checkout"),
+    path('professionals/',views.booking_professional_page,name="professional"),
+    path('professional/<int:professional_id>',views.professional_page,name='professionalspage'),
+    path('professionalsform/<int:professional_id>',views.professionalsbookingform,name="professionalsbookingform"),
+    path('succesfullyaddedprofessional/<int:professional_id>',views.professionalsbookinglistadder,name="professionalsbookinglistadder")
 
 
 

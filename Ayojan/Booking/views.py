@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import JsonResponse
 from .search_logic import search_venues
-
+from django.core.paginator import Paginator
 
 
 #below i have created the search login for search page and booking page
@@ -15,7 +15,16 @@ def bookingpage(request):
         return render(request, 'Booking/bookingpage.html', {'venues': search_results})
     else:
         venues = Venues.objects.all()
-        return render(request , 'Booking/bookingpage.html',{'venues':venues})
+    # Implement pagination
+    paginator = Paginator(venues, 20)  # Show 20 venues per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'venues': page_obj,
+    }
+    return render(request, 'Booking/bookingpage.html', context)    
+    
 
 def search_page(request):
     search_results = search_venues(request)
@@ -29,55 +38,94 @@ def search_page(request):
 
 
 #below i have created the booking form funciton this grabs the data from the form and created a booking in database.
-def bookingform(request,venue_id):
+def bookingform(request,venue_id=0):
     if request.method == "POST":
         #additionally this handels the updation of incomplete forms
         booking_ids = request.POST.getlist('booking_id')
         incomplete_bookings = Booking.objects.filter(id__in=booking_ids)
         if booking_ids :
             for booking in incomplete_bookings:
-                # Extract details from the form
-                start_date = request.POST[f"start_date_{booking.id}"]
-                end_date = request.POST[f"end_date_{booking.id}"]
-                num_people = int(request.POST[f"num_people_{booking.id}"])
-                event_type = request.POST[f"event_type_{booking.id}"]
-                food_type = request.POST[f"food_type_{booking.id}"]
-                decoration_needed = request.POST[f"decoration_needed_{booking.id}"].lower() == "yes"
-                time_duration = request.POST[f"time_duration_{booking.id}"]
-                additional_services = request.POST[f"additional_services_{booking.id}"]
+                if booking.venue :
+                    # Extract details from the form
+                    start_date = request.POST[f"start_date_{booking.id}"]
+                    end_date = request.POST[f"end_date_{booking.id}"]
+                    num_people = int(request.POST[f"num_people_{booking.id}"])
+                    event_type = request.POST[f"event_type_{booking.id}"]
+                    food_type = request.POST[f"food_type_{booking.id}"]
+                    decoration_needed = request.POST[f"decoration_needed_{booking.id}"].lower() == "yes"
+                    time_duration = request.POST[f"time_duration_{booking.id}"]
+                    additional_services = request.POST[f"additional_services_{booking.id}"]
 
-                # Update the attributes of the booking object
-                booking.start_date = start_date
-                booking.end_date = end_date
-                booking.num_people = num_people
-                booking.event_type = event_type
-                booking.food_type = food_type
-                booking.decoration_needed = decoration_needed
-                booking.time_duration = time_duration
-                booking.additional_services = additional_services
+                    # Update the attributes of the booking object
+                    booking.start_date = start_date
+                    booking.end_date = end_date
+                    booking.num_people = num_people
+                    booking.event_type = event_type
+                    booking.food_type = food_type
+                    booking.decoration_needed = decoration_needed
+                    booking.time_duration = time_duration
+                    booking.additional_services = additional_services
 
-                # Grabbing the user & the venue
-                user = request.user
-                venue = get_object_or_404(Venues, pk=venue_id)
+                    # Grabbing the user & the venue
+                    user = request.user
+                    venue = get_object_or_404(Venues, pk=venue_id)
 
-                start_date_cpy = datetime.strptime(start_date, "%Y-%m-%d")
-                end_date_cpy = datetime.strptime(end_date, "%Y-%m-%d")
+                    start_date_cpy = datetime.strptime(start_date, "%Y-%m-%d")
+                    end_date_cpy = datetime.strptime(end_date, "%Y-%m-%d")
 
-                # Calculate the duration in days
-                duration_days = (end_date_cpy - start_date_cpy).days
+                    # Calculate the duration in days
+                    duration_days = (end_date_cpy - start_date_cpy).days
 
-                # Calculate the total price
-                total_price = venue.calculate_price(num_guests=num_people, event_type=event_type, duration=duration_days)
+                    # Calculate the total price
+                    total_price = venue.calculate_price(num_guests=num_people, event_type=event_type, duration=duration_days)
+                    
+                    # Update the total price of the booking
+                    booking.total_price = total_price
+
+                    # Save the updated booking object
+                    booking.save()
+                    
                 
-                # Update the total price of the booking
-                booking.total_price = total_price
+                elif booking.professional :
+                    # Extract details from the form
+                    start_date = request.POST[f"start_date_{booking.id}"]
+                    end_date = request.POST[f"end_date_{booking.id}"]
+                    event_type = request.POST[f"event_type_{booking.id}"]
+                    time_duration = request.POST[f"time_duration_{booking.id}"]
+                    
 
-                # Save the updated booking object
-                booking.save()
+                    # Update the attributes of the booking object
+                    booking.start_date = start_date
+                    booking.end_date = end_date
+                    booking.num_people = 1
+                    booking.event_type = event_type
+                    booking.food_type = "NOTHING"
+                    booking.decoration_needed = False
+                    booking.time_duration = time_duration
+                    booking.additional_services = "NOTHING"
+
+                    # Grabbing the user
+                    user = request.user
+                    
+
+                    start_date_cpy = datetime.strptime(start_date, "%Y-%m-%d")
+                    end_date_cpy = datetime.strptime(end_date, "%Y-%m-%d")
+
+                    # Calculate the duration in days
+                    duration_days = (end_date_cpy - start_date_cpy).days
+
+                    # Calculate the total price
+                    total_price = duration_days*24*(booking.professional.price_range)
+                    
+                    # Update the total price of the booking
+                    booking.total_price = total_price
+
+                    # Save the updated booking object
+                    booking.save()
             booking = Booking.objects.filter(user = user)
             return render(request, 'Booking/cartpage.html', {'bookings':booking})
-
         else:
+        
             # Extracting the details of the booking from the Form
             start_date = request.POST["start_date"]
             end_date = request.POST["end_date"]
@@ -128,11 +176,13 @@ def bookingform(request,venue_id):
                 payment_status = "UNDECIDED",
             )
             return redirect('mainpage:mainpage') #this will actually be redirected to payment page.
-            
+        
+        
     else:   
-        venue = get_object_or_404(Venues, pk=venue_id)
-        return render(request, 'Booking/bookingform.html',{'venue':venue})
-
+    
+        context = get_object_or_404(Venues,pk=venue_id) 
+        return render(request, 'Booking/bookingform.html',{'venue':context})
+        
 
 #Below function loads up the page for a specific venue that is being clicked on
 def venuepage(request,venue_id):
@@ -158,8 +208,15 @@ def bookinglistadder(request,venue_id):
             venue=venue,
             payment_status = "UNDECIDED",
     )
-    Venue = Venues.objects.all()
-    return render(request, "Booking/bookingpage.html", {'venues':Venue})
+    venues = Venues.objects.all()
+    paginator = Paginator(venues, 20)  # Show 20 venues per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'venues': page_obj,
+    }
+    return render(request, 'Booking/bookingpage.html', context)
 
 
 
@@ -201,6 +258,8 @@ def checkout_verification(request):
         incomplete_bookings = []
         incomplete_booking_ids = []
         for booking in bookings:
+            
+
             if (
                 not booking.start_date or
                 not booking.end_date or
@@ -213,9 +272,104 @@ def checkout_verification(request):
                 incomplete_booking_ids.append(booking.id)
 
         if incomplete_bookings:
-            return render(request,'Booking/bookingform.html',{"incomplete_bookings":incomplete_bookings})
-        
+                return render(request,'Booking/bookingform.html',{"incomplete_bookings":incomplete_bookings})
+            
         total_price = sum(booking.total_price for booking in bookings)
         return render(request, 'Booking/checkout.html', {'bookings': bookings, 'total_price': total_price})
     else:
         return render(request,'Booking/cartpage.html',{'bookings':bookings}) 
+    
+
+
+
+
+def booking_professional_page(request):
+    professional = Professional.objects.all()
+    # Implement pagination
+    paginator = Paginator(professional, 20)  # Show 20 professionals per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+    }
+    return render(request, 'Booking/bookingpage_professional.html', context)
+
+
+def professional_page(request,professional_id):
+    professional = get_object_or_404(Professional,pk=professional_id)
+    bookings = Booking.objects.filter(professional_id = professional_id)
+    reviews = ProfessionalReview.objects.filter(professional_id = professional_id)
+    if bookings == None :
+        bookings = []
+        return render(request,'Booking/professionalspage.html',{'professional':professional,'bookings':bookings,'reviews':reviews})
+    else:    
+        return render(request,'Booking/professionalspage.html',{'professional':professional,'bookings':bookings,'reviews':reviews})
+    
+
+
+
+#below i have created the booking form funciton this grabs the data from the form and created a booking in database.
+def professionalsbookingform(request,professional_id):
+    if request.method == "POST":
+    
+        start_date = request.POST[f"start_date_{booking.id}"]
+        end_date = request.POST[f"end_date_{booking.id}"]
+        event_type = request.POST[f"event_type_{booking.id}"]
+        time_duration = request.POST[f"time_duration_{booking.id}"]
+
+        # Grabbing the user & the professional
+        user = request.user
+        professional = get_object_or_404(Venues, pk=professional_id)
+
+        start_date_cpy = datetime.strptime(start_date, "%Y-%m-%d")
+        end_date_cpy = datetime.strptime(end_date, "%Y-%m-%d")
+
+        # Calculate the duration in days
+        duration_days = (end_date_cpy - start_date_cpy).days
+
+        # Calling the funtion in the Venues model for calculation the price.
+        total_price = duration_days*24*(professional.price_range)
+
+
+        # Create and save a new Booking object
+        booking = Booking.objects.create(
+            start_date=start_date,
+            end_date=end_date,
+            num_people=0,
+            event_type=event_type,
+            food_type="NO",
+            decoration_needed="NO",
+            time_duration=time_duration,
+            additional_services="NO",
+            user=user, 
+            professional=professional,
+            total_price = total_price,
+            payment_status = "UNDECIDED",
+        )
+        return redirect('Booking:cartpage') #this will actually be redirected to payment page.
+        
+    else:   
+        professional = get_object_or_404(Professional, pk=professional_id)
+        return render(request, 'Booking/professionalsbooking_form.html',{'professional':professional})
+
+
+def professionalsbookinglistadder(request,professional_id):
+    user = request.user
+    professional = get_object_or_404(Professional, pk=professional_id)
+    
+    booking = Booking.objects.create(
+            user=user, 
+            professional=professional,
+            payment_status = "UNDECIDED",
+    )
+    professional = Professional.objects.all()
+    # Implement pagination
+    paginator = Paginator(professional, 20)  # Show 20 professionals per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+    }
+    return render(request, 'Booking/bookingpage_professional.html', context)

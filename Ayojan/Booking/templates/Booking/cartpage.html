@@ -8,33 +8,24 @@
         
             <!-- Venue Item -->
             {% for booking in bookings %}
-                
-                <div class="cart-item">                
+                    {% if booking.venue.id %}
+                        <div >
+                            <h2>{{ booking.venue.venue_name }}</h2>
+                            <p>Location: {{ booking.venue.city }}, {{ booking.venue.state }}, {{ booking.venue.address }}</p>
+                            <p>Price: {{ booking.total_price }}</p>
+                        </div>
                     
-                    <h2>{{booking.venue.venue_name}}</h2>
-                    <p>Location: {{booking.venue.city}}, {{booking.venue.state}}, {{booking.venue.address}}</p>
-                    <p>Price: {{booking.total_price}}</p>
-        
-                </div>
-        
+                    {% endif %}
+                    
+                    {% if booking.professional.id %}
+                        <div>
+                            <h2>{{ booking.professional.name }}</h2>
+                            <p>{{ booking.professional.profession }}</p>
+                            <p>Price: {{ booking.professional.price_range }}</p>
+                        </div>
+                    {% endif %}
             {% endfor %}
-        
-                <!-- Photographer Item -->
-            <div class="cart-item">
-                <h3>Photographer Name</h3>
-                <p>Package: Wedding Photography</p>
-                <p>Price: $500</p>
-            </div>
-        
-        
-            <!-- Caterer Item -->
-            <div class="cart-item">
-                <h3>Caterer Name</h3>
-                <p>Package: Full Catering Service</p>
-                <p>Price: $800</p>
-            </div>
-        
-            <!-- Additional Items as needed -->
+    
         
             <div id="total-price">
                 <p>Total Price: $2300</p>

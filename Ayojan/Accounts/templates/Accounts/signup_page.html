@@ -1,41 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    {% load static %}
     {% load socialaccount %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-</head>
-<body>
-    <h2>Sign Up</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="first_name">First Name:</label><br>
-        <input type="text" id="first_name" name="first_name" required><br><br>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'Accounts/CSS/signup_CS.css'%}" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-        <label for="last_name">Last Name:</label><br>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+    </head>
+    <body>
+        <div class="container-fluid sign-in">
+            <div class="row justify-content-center div">
+                <div class="overlap">
+                    <div class="top-pannel-sign-in">
+                        <div class="group">
+                            <div class="overlap-group">
+                             
+                               
+                                <a href="{% url 'Accounts:login_view'%}">
+                                    
+                                    <button class="login-button">
+                                    
+                                    <div class="text-wrapper">
+                                      login
+                                    </div>
+                                
+                                
+                                </button></a>
+                          
+                                
 
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <img class="ayojan img-fluid" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" />
+                </div>
+                <div class="sign-in-option-wrapper mt-4">
+                   <div class="side-div text-center mb-4"> <img class="side-img img-fluid" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}"/></div>  <!--Which img?? because if i put the ayojan image it goes all over the place-->
+                    <div class="sign-in-option">
+                        <div class="overlap-2">
+                            <div class="group-wrapper">
+                                <div class="group-2">
+                                    <div class="frame"><div class="text-wrapper-2">Get Started Now</div></div>
+                                    <form method="POST" >
+                                        {% csrf_token %}
+                                        <div class="frame-2">
+                                            <div class="div-wrapper">
+                                                <div class="text-wrapper-3">
+                                                    <div class="form-floating mb-3" class="username">
+                                                        <input type="name" class="form-control" id="floatingInput"  name="username" placeholder="name">
+                                                        <label for="floatingInput">Username</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="frame-4">
+    
+                                            <div class="form-floating mb-3" class="email">
+                                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name">
+                                                <label for="floatingInput">Email address</label>
+                                              </div>
+                                            
+                                        </div>
+    
+                                        <div class="form-floating mb-3" class="firstname">
+                                            <input type="name" class="form-control" id="floatingInput" name="first_name" laceholder="name">
+                                            <label for="floatingInput"> First name</label>
+                                          </div>
+    
+                                          <div class="form-floating mb-3" class="lastname">
+                                            <input type="name" class="form-control" id="floatingInput" name="last_name" placeholder="name">
+                                            <label for="floatingInput">Last name</label>
+                                          </div>
+    
+    
+                                        <div class="frame-6">
+                                            <div class="form-floating mb-3" class="password">
+                                                <input type="password" class="form-control" id="floatingInput" name="password" placeholder="name">
+                                                <label for="floatingInput">Password</label>
+                                            </div>   
+                                            <!--This feild is added ajust the css accordingly, it is a required feild-->
+                                            <div class="form-floating mb-3" class="password">
+                                                <input type="password" class="form-control" id="floatingInput" name="confirm_password" placeholder="name">
+                                                <label for="floatingInput">Confirm Password</label>
+                                            </div>
+                                        </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+                                        <div class="frame-10">
+                                           
+                                            <button class="sign-in-btn" type="submit">
+                                            <div class="text-wrapper-8">Sign-in</div>
+                                            </button>
+                                        
+                                        </div>
+                                    </form>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+                                    <div class="overlap-group-wrapper">
+                                        <div class="overlap-group-2">
+                                            
+                                            <div class="frame-8"><div class="text-wrapper-5">Or</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="group-3">
 
-        <label for="confirm_password">Confirm Password:</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                              i agree to the terms and policies
+                                            </label>
+                                          </div>
 
-        <button type="submit">Sign Up</button>
-    </form>
-
-    <hr>
-    <p>Or sign up with Google:</p>
-    <form action="{% provider_login_url 'google' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">CONTINUE WITH GOOGLE</button>
-    </form>
-</body>
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="frame-9 mt-3 text-center">
+                                <form action="{% provider_login_url 'google' %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="google-btn" type="button">
+                                    <img class="image" src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" />
+                                    <div class="text-wrapper-7">
+                                     GOOGLE</button>
+                                </form>
+                                </div>
+                            </button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
