@@ -227,7 +227,7 @@ def cartpage(request):
     #creating seprate html page for authenticated and not authenticated user
     if request.user.is_authenticated:
         user = request.user
-        booking = Booking.objects.filter(user = user)
+        booking = Booking.objects.filter(user = user, booking_status = False)
         return render(request, 'Booking/cartpage.html', {'bookings':booking})
     else :
         booking = []
@@ -247,6 +247,7 @@ def search_suggestions(request):
         data = [{'name': suggestion.venue_name} for suggestion in suggestions]
         return JsonResponse(data, safe=False)
     return JsonResponse([], safe=False)
+
 
 #This funtion confirms that all the feild in all the user's bookings are filled
 def checkout_verification(request):
@@ -275,7 +276,7 @@ def checkout_verification(request):
                 return render(request,'Booking/bookingform.html',{"incomplete_bookings":incomplete_bookings})
             
         total_price = sum(booking.total_price for booking in bookings)
-        return render(request, 'Booking/checkout.html', {'bookings': bookings, 'total_price': total_price})
+        return render(request, 'Payment/checkout.html', {'bookings': bookings, 'booking_ids':booking_ids,'total_price': total_price})
     else:
         return render(request,'Booking/cartpage.html',{'bookings':bookings}) 
     

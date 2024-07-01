@@ -17,7 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
+EMAIL_BACKEND = EMAIL_BACKEND
 EMAIL_USE_TLS = True
 EMAIL_HOST = EMAIL_HOST
 EMAIL_HOST_USER = EMAIL_HOST_USER
@@ -44,6 +44,7 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
+    'Payment',
     'Accounts',
     'MainPage',
     'Booking',

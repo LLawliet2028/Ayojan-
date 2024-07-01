@@ -68,6 +68,8 @@ class Professional(models.Model):
     price_range = models.DecimalField(max_digits=10, decimal_places=2)
     portfolio = models.URLField()
     availability = models.BooleanField()
+    contact_email = models.CharField(max_length=255,blank=True)
+    contact_number = models.IntegerField(blank=True,default= 0)
 
     def __str__(self):
         return self.name

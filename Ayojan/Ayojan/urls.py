@@ -23,6 +23,7 @@ urlpatterns = [
     path('',include('MainPage.urls')),
     path('account/',include('Accounts.urls')),    
     path('accounts/',include("allauth.urls")),
-    path('booking/',include('Booking.urls'))
+    path('booking/',include('Booking.urls')),
+    path('payment/',include('Payment.urls'))
 
 ]

@@ -3,6 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
+        {% if bookings %}
         <div id="cart">
             <h2>Booking List</h2>
         
@@ -39,6 +40,9 @@
                 <button id="checkout-button" type="submit">Proceed to Checkout</button>
             </form>
         </div>
+        {% else %}
+        <div>Add something in your cart!</div>
+        {% endif %}
     {% else %}
         <div><h1>Login to see What's in your Booking List</h1></div>
     {% endif %}
