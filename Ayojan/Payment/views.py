@@ -170,7 +170,7 @@ def send_confirmation_mail_vendor_professionals(bookings):
     for booking in bookings:
         if booking.venue:  
             # Send email to vendor
-            vendor_email = booking.venue.vendor.email 
+            vendor_email = booking.venue.vendor.contact_email 
             subject = 'New Booking Confirmation'
             context = {
                 'booking': booking,
@@ -186,7 +186,7 @@ def send_confirmation_mail_vendor_professionals(bookings):
             )
         elif booking.professional:  
             # Send email to professional
-            professional_email = booking.professional.email 
+            professional_email = booking.professional.contact_email 
             subject = 'New Booking Confirmation'
             context = {
                 'booking': booking,
