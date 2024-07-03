@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .profile-info, .edit-profile {
+            margin-top: 20px;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .profile-info p span {
+            font-weight: bold;
+        }
+
+        .edit-profile form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edit-profile label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .edit-profile input, .edit-profile textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .edit-profile button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .edit-profile button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function enableEdit() {
+            const inputs = document.querySelectorAll('.edit-profile input, .edit-profile textarea');
+            inputs.forEach(input => {
+                input.disabled = false;
+            });
+            document.getElementById('saveBtn').style.display = 'block';
+        }
+
+        function disableEdit() {
+            const inputs = document.querySelectorAll('.edit-profile input, .edit-profile textarea');
+            inputs.forEach(input => {
+                input.disabled = true;
+            });
+            document.getElementById('saveBtn').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Vendor Profile</h1>
+        <div class="profile-info">
+            <p><span>Name:</span> {{ vendor.name }}</p>
+            <p><span>Contact Info:</span> {{ vendor.contact_info }}</p>
+            <button onclick="enableEdit()">Edit Profile</button>
+        </div>
+
+        <div class="edit-profile">
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ vendor.name }}" disabled>
+                <label for="contact_info">Contact Info:</label>
+                <textarea id="contact_info" name="contact_info" rows="4" disabled>{{ vendor.contact_info }}</textarea>
+                <button type="submit" id="saveBtn" style="display:none;">Save</button>
+                <button type="button" onclick="disableEdit()" style="display:none;">Cancel</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
