@@ -31,8 +31,5 @@ def search_venues(request):
             except ValueError:
                 pass
         
-        if not (city and state and base_price and search_query):  
-            return None
-        
         search_results = Venues.objects.filter(filters)
         return search_results

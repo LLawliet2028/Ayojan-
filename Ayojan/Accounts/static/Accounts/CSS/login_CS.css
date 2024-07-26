@@ -1,485 +1,126 @@
+*{
+  font-family: monospace,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a{
+  text-decoration: none;
+}
 body
 {
+  box-sizing: border-box;
   margin:0%;
   padding:0%;
+  overflow-y: hidden;
 }
 
-.login-page {
-    background-color:black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    
-  }
+.navbar{
+  background-color: #f1cfcb;
+  display: flex;
 
-  .side-img
-  {
-    width:400px;
-    height:600px;
+}
 
-  }
+#navbar-logo{
+  width: 70px;
+  height: 70px;
+  padding: 10px 30px;
+}
 
-  .side-box
-  {
-    
-    display: flex;
-    height: 700px;
-    width:500px;
-    margin-top: 100px;
-    margin-left: 100px;
-    justify-content: center;
-    align-items: center;
-  }
+.middle{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+}
 
-  .frame-4-btn {
-    width: 400px;
-    height: 50px;
-    border-radius: 6px;
-    margin-left: -7px;
-    border-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:white; /* Blue background color */
-    color: white; /* White text color */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.2s ease; /* Smooth transition for all properties */
-  }
-  
-  .frame-4-btn:active {
-    background-color:#dddddd; /* Darker blue background color */
-    transform: scale(0.95); /* Slightly reduce the size */
-  }
+#login-div-logo{
+  width : 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
 
-  .form-floating
-  {
-    width:400px;
-    color: grey;
-    height:50px;
-  }
+.login-div{
+  background-color: #f1cfcb;
+  width: auto;
+  height: 400px;
+  padding: 20px 50px;
+  margin: 30px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .form-check-input
-  {
-  background-color: #7f265b;
-  }
+.login-form-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
 
-  
+.login-form{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  
-  .login-page .div {
-    background-color: #f1cfcb;
-    overflow: hidden;
-    width: 100%;
-    height: 1024px;
-    position: relative;
-  }
-  
-  .login-page .overlap-group {
-    position: absolute;
-    display:flex;
-    width: 1301px;
-    height: 838px;
-    top: 138px;
-    left: 69px;
-    background-color: #f9eeeed6;
-    border-radius: 52px;
-  }
-  
-  .login-page .login-option {
-    position: relative;
-    width: 420px;
-    height: 595px;
-    top: 100px;
-    left:200px;
-    
-  }
-  
-  .login-page .frame {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .login-page .frame-2 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .frame-3 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 3px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .text-wrapper {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-Bold", Helvetica;
-    font-weight: 700;
-    color: #515151;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .p {
-    position: relative;
-    width: fit-content;
-    font-family: "Nunito Sans-Regular", Helvetica;
-    font-weight: 400;
-    color: #515151;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .frame-4 {
-    display: flex;
-    width: 420px;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-    padding: 10px;
-    position: relative;
-    flex: 0 0 auto;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #e7e7e7;
-  }
-  
-  .login-page .image {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
-    margin-left: 30px;
-  }
-  
-  .login-page .text-wrapper-2 {
-    position: relative;
-    width: fit-content;
-    font-family: "Nunito Sans-Bold", Helvetica;
-    font-weight: 700;
-    color: gray;
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-left:4px;
-    margin-top:3px; 
-  }
-  
-  .login-page .or-sign-in-with {
-    position: relative;
-    width: fit-content;
-    font-family: "Nunito Sans-SemiBold", Helvetica;
-    font-weight: 600;
-    color: transparent;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .span {
-    color: #dddddd;
-  }
-  
-  .login-page .text-wrapper-3 {
-    color: #a1a1a1;
-  }
-  
-  .login-page .frame-5 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .frame-6 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .text-wrapper-4 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-SemiBold", Helvetica;
-    font-weight: 600;
-    color: var(--gray-3);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .div-wrapper {
-    display: flex;
-    width: 420px;
-    align-items: center;
-    gap: 13px;
-    padding: 13px 10px;
-    position: relative;
-    flex: 0 0 auto;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #ded2d9;
-  }
-  
-  .login-page .text-wrapper-5 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--gray-5);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .frame-7 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .frame-8 {
-    display: flex;
-    width: 420px;
-    align-items: center;
-    gap: 13px;
-    padding: 18px 10px 13px;
-    position: relative;
-    flex: 0 0 auto;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #ded2d9;
-  }
-  
-  .login-page .text-wrapper-6 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--gray-5);
-    font-size: 10px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .frame-9 {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 222px;
-    margin-top: 20px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .checkbox {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    position: relative;
-    flex: 0 0 auto;
-  }
-  
-  .login-page .check {
-    position: relative;
-    width: 12px;
-    height: 12px;
-    background-color: #7f265b;
-    border-radius: 2px;
-  }
-  
-  .login-page .check-solid {
-    position: relative;
-    width: 10px;
-    height: 10px;
-    top: 1px;
-    left: 1px;
-  }
-  
-  .login-page .icons-navigation {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    top: 1px;
-    left: 1px;
-  }
-  
-  .login-page .text-wrapper-7 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-Regular", Helvetica;
-    font-weight: 400;
-    color: #a1a1a1;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .text-wrapper-8 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #7f265b;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-left: -20px;
-  }
+input{
+  margin: 5px;
+  width : 200px;
+  height: auto;
+  padding: 10px;
+  border-radius: 12px;
+  border: 0px;
+  text-align:center;
+}
 
-  .frame-10-btn
-  {
-    width: 460px;
-    height: 60px;
-    background-color: #7f265b;
-    border-radius: 6px;
-    border-color: transparent;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.2s ease; /* Smooth transition for all properties */
-  }
-  
-  .frame-10-btn:active {
-    background-color:#7f265b; /* Darker blue background color */
-    transform: scale(0.96); /* Slightly reduce the size */
-  }
 
-  .regis-btn
-  {
-    background-color: transparent;
-    border-color: transparent;
-    color: #7f265b;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.2s ease; /* Smooth transition for all properties */
-  }
-  
-  .regis-btn:active {
-    background-color:transparent; /* Darker blue background color */
-    transform: scale(0.96); /* Slightly reduce the size */
-  }
-  
-  .pass-btn{
-    background-color: transparent;
-    border-color: transparent;
-    color: #7f265b;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.2s ease; /* Smooth transition for all properties */
-  }
+#google-login-button{
+  width : 220px;
+  height: auto;
+  padding: 10px;
+  border-radius: 12px;
+  border: 0px;
+  text-align:center;
+  margin-bottom: 5px;
 
-  .pass-btn:active
-  {
-    background-color: transparent;
-    transform: scale(0.96);
-  }
-  
-  
-  .login-page .frame-10 {
-    display: flex;
-    width: 420px;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-    padding: 13px 10px 12px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color:transparent;
-    border-radius: 6px;
-    margin-top: 60px;
-  }
-  
-  .login-page .text-wrapper-9 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-ExtraBold", Helvetica;
-    font-weight: 800;
-    color: #ffffff;
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-left: 155px;
-  }
-  
-  .login-page .frame-11 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    position: absolute;
-    top: 570px;
-    left: 63px;
-  }
-  
-  .login-page .text-wrapper-10 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--gray-3);
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .text-wrapper-11 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Nunito Sans-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #7f265b;
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .login-page .overlap {
-    position: absolute;
-    width: 6758px;
-    height: 90px;
-    top: 0;
-    left: -2659px;
-    background-color: #f2b2a9;
-  }
-  
-  .login-page .ayojan {
-    position: absolute;
-    width: 101px;
-    height: 83px;
-    top: 0;
-    left: 2699px;
-    object-fit: cover;
-  }
-  
+}
+
+#google-login-button:hover {
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#google-logo{
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
+}
+
+#submit-button{
+  width : 220px;
+  height: auto;
+  padding: 10px;
+  border-radius: 12px;
+  border: 0px;
+  text-align:center;
+}
+
+#submit-button:hover {
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.signup-div{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-div > span{
+  margin-bottom: 10px;
+}
