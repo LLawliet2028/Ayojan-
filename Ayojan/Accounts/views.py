@@ -43,23 +43,28 @@ def login_view(request):
 def signup_view(request):
     #below i have taken the response provided by the user on the form and stored it an variable
     if request.method == "POST":
-        username = request.POST['username']
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        email = request.POST['email']
-        password = request.POST['password']
-        confirm_password = request.POST['confirm_password']
+        username = request.POST['USERNAME']
+        first_name = request.POST['FIRST_NAME']
+        last_name = request.POST['LAST_NAME']
+        email = request.POST['EMAIL']
+        password = request.POST['PASSWORD']
+        confirm_password = request.POST['CONFIRM_PASSWORD']
 
         #checking it password is equal confirm password
         if password != confirm_password:
             messages.error(request, "Password don't match")
+            return redirect('Accounts:signup_view')
 
         # Checking if username or email already exists
         if User.objects.filter(username=username).exists():
             messages.error(request,"Username already exsist")
+            return redirect('Accounts:signup_view')
+
 
         if User.objects.filter(email=email).exists():
             messages.error(request,"Email already exsist")
+            return redirect('Accounts:signup_view')
+
 
         myuser = User.objects.create_user(username,email,password)
         myuser.first_name = first_name
@@ -124,3 +129,7 @@ def activate_acc(request, uidb64, token):
 def signout(request):
     logout(request)
     return redirect('mainpage:mainpage')
+
+
+def profile_info(request):
+    return render(request, 'Accounts/personal_info.html')

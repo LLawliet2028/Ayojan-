@@ -15,7 +15,7 @@
 <body>
   {% if user.is_authenticated %}
   <script type="text/javascript">
-      window.location.href = "{% url 'redirect_url_name' %}";
+      window.location.href = "{% url 'mainpage:mainpage' %}";
   </script>
   {% endif %}
   <div class="navbar">
@@ -27,7 +27,7 @@
       <div class="login-form-div">
         <form action="{% provider_login_url 'google' %}" method="post">
           {% csrf_token %}
-          <button type="submit" id="google-login-button"><img id="google-logo" src="{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}">Login</button>
+          <button type="submit" id="google-login-button"><img id="google-logo" src="{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}"><span id="google-login-text">Login</span></button>
         </form>
         <span>-----Or-----</span>
         <form class="login-form" method="POST">

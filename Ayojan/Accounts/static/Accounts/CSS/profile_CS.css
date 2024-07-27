@@ -1,0 +1,141 @@
+* {
+    font-family: monospace, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+
+.navbar {
+    background-color: #f1cfcb;
+    display: flex;
+    width: 100%;
+}
+
+#navbar-logo {
+    width: 70px;
+    height: 70px;
+    padding: 10px 30px;
+}
+
+
+.middle{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side-panel{
+    background-color: #eaa29a;
+    height: 1000px;
+    width : 300px;
+    margin: 10px;
+    border: 0px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-side-panel{
+    background-color: #ef958b;
+    height: 1000px;
+    width : 100%;
+    margin: 10px;
+    border: 0px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    margin: 10px;
+    padding-top: 20px;
+
+}
+
+.img-div{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 0px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+#profile-img{
+    width: 100px;
+    height: 100px;
+}
+
+.options{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+#option{
+    width : 200px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 0px;
+    text-align:center;
+    margin-bottom: 5px;
+}
+
+#option:hover{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/*Inside right-side-panel, personal info page*/
+.personal-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    padding-left: 30px;
+    gap: 8px;
+}
+
+#name{
+    display: flex;
+    gap: 20px;
+}
+
+#username{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    width: auto;
+    height: 20px;
+    background-color: white;
+    border: 0px;
+    border-radius: 4px;
+    text-align: center;
+    gap: 5px;
+}
+
+#pencil{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-top: 5px;
+}

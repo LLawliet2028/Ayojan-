@@ -4,24 +4,34 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Accounts/CSS/profile_CS.css'%}">
     <title>Account Profile</title>
 </head>
 <body>
 
-<div class="profile-container">
-    <h2>Account Profile</h2>
-    <div class="profile-details">
-        <p><strong>Username:</strong> {{ user.username }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <!-- Add more profile details as needed -->
+    <div class="navbar">
+        <img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
     </div>
-    <div class="profile-actions">
-        <a href="" class="profile-btn">Edit Profile</a>
-        <a href="" class="profile-btn">Change Password</a>
-        <a href="{% url 'Accounts:signout'%}" class="profile-btn">Sign out</a>
-        <!-- Add more profile actions as needed -->
+    <div class="middle">
+        <div class="left-side-panel">
+           <div class="img-div"><img id="profile-img" src="{% static 'Accounts/IMAGES/pfp.png'%}" alt="logo"></div>
+
+            <div class="options">
+                <div><a href="{% url 'Accounts:personal_info'%}"><button id="option">Personal Info</button></a></div>
+                <div><a href="#"><button id="option">Transaction History</button></a></div>
+                <div><a href="#"><button id="option">Booking History</button></a></div>
+                <div><a href="#"><button id="option">Reviews Left</button></a></div>
+                <div><a href="#"><button id="option">About us</button></a></div>
+                <div><a href="#"><button id="option">Log Out</button></a></div>
+            </div>
+
+        </div>
+        <div class="right-side-panel">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
     </div>
-</div>
 
 </body>
 </html>
