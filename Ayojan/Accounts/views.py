@@ -15,7 +15,7 @@ from Ayojan import settings
 #below funciton loads up profile_view html
 def profile_view(request):
 
-    return render(request, 'Accounts/profile_view.html')
+    return render(request, 'Accounts/personal_info.html')
 
 
 #below funciton loads up login_page html

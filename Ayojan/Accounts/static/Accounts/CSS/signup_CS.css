@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 * {
     font-family: monospace, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -75,90 +91,89 @@ body {
 }
 
 
-input{
+input {
     margin: 5px;
-    width : 200px;
+    width: 200px;
     height: auto;
     padding: 10px;
     border-radius: 12px;
     border: 0px;
-    text-align:center;
-  }
-  
-  
-  #google-login-button{
-    width : 220px;
+    text-align: center;
+}
+
+
+#google-login-button {
+    width: 220px;
     height: auto;
     padding: 10px;
     border-radius: 12px;
     border: 0px;
-    text-align:center;
+    text-align: center;
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-  
-  }
-  
-  #google-login-button:hover {
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  #google-logo{
+
+}
+
+#google-login-button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#google-logo {
     width: 20px;
     height: 20px;
     padding-right: 5px;
-  }
-  
-  #submit-button{
-    width : 220px;
+}
+
+#submit-button {
+    width: 220px;
     height: auto;
     padding: 10px;
     border-radius: 12px;
     border: 0px;
-    text-align:center;
-  }
-  
-  #submit-button:hover {
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  .login-div{
+    text-align: center;
+}
+
+#submit-button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.login-div {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .login-div > span{
+}
+
+.login-div>span {
     margin-bottom: 10px;
-  }
-  
-  
-  
-  @media  only screen and (max-width: 743px) {
-    body
-  {
-    box-sizing: border-box;
-    margin:0%;
-    padding:0%;
-    overflow-y: scroll;
-  }
-  
-  .signup-div{
-    background-color: #f1cfcb;
-    width: 100%;
-    height: 100%;
-    padding: 20px 50px;
-    margin: 30px;
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  }
+}
+
+
+
+@media only screen and (max-width: 743px) {
+    body {
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+        overflow-y: scroll;
+    }
+
+    .signup-div {
+        background-color: #f1cfcb;
+        width: 100%;
+        height: 100%;
+        padding: 20px 50px;
+        margin: 30px;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+}
