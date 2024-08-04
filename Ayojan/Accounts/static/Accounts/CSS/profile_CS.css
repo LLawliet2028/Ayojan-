@@ -32,17 +32,66 @@ body {
     background-color: antiquewhite;
 }
 
-
 .navbar {
     background-color: #f1cfcb;
     display: flex;
     width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 #navbar-logo {
     width: 70px;
     height: 70px;
     padding: 10px 30px;
+}
+
+.left-navbar {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: baseline;
+    align-items: center;
+    margin-right: auto;
+}
+
+.right-navbar {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: end;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.right-navbar > div > a > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#profile-btn{
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
+}
+
+#login-btn{
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
+}
+
+#cart-btn{
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
 }
 
 .open-sidebar-button {

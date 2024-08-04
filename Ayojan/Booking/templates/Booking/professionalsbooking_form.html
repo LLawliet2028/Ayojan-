@@ -2,20 +2,20 @@
 
 {% block content %}
 
-        <h1>{{ professional.name }}</h1>
-        <h1>Booking Form</h1>
-        <form method="POST">
+
+        <form class="booking-forms" method="POST">
+            <h1>{{ professional.name }} <b>{{ professional.profession }}</b></h1>
+            
+            <h1>Booking Form</h1>
             {% csrf_token %}
-            <input type="hidden" id="peofessional_id" name="peofessional_id" value="{{ peofessional.id }}">
             <label for="start_date">Start Date:</label>
-            <input type="date" id="start_date" name="start_date_{{booking.id}}" value="{{ booking.start_date|date:'Y-m-d' }}" required><br><br>
-            
+            <input type="date" id="start_date" name="start_date" required><br>
+        
             <label for="end_date">End Date:</label>
-            <input type="date" id="end_date" name="end_date_{{booking.id}}" value="{{ booking.end_date|date:'Y-m-d' }}" required><br><br>
-            
-            
+            <input type="date" id="end_date" name="end_date" required><br>
+        
             <label for="event_type">Event Type:</label>
-            <input type="text" id="event_type" name="event_type_{{booking.id}}" value="{{ booking.event_type }}" required><br><br>
+            <input type="text" id="event_type" name="event_type" required><br>
             <button type="submit">Submit</button>
         </form>
         

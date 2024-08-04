@@ -9,7 +9,35 @@
     
 </head>
 <body>
-    <h1>Helllo</h1>
-    <h2>Here goes the HTML and CSS of MainPage.</h2>
+    <div class="navbar">
+        <div class="left-navbar">
+             <img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+             
+             <div>
+                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
+             </div>
+             <div>
+                 <a href="{% url 'Booking:professional'%}">Professionals</a>
+             </div>
+         
+        </div>
+  
+             
+         <div class="right-navbar">
+             <div class="profile-or-login">
+                 {% if user.is_authenticated %}
+                     <a href="{% url 'Accounts:profile_view' %}"><button id="profile-btn">Profile</button></a>
+                 {% else %}
+                     <a href="{% url 'Accounts:login_view' %}"><button id="login-btn">login</button></a>
+                 {% endif %}
+             </div>
+             <div class="cart-button">
+                 <a href="{% url 'Booking:cartpage' %}"><button id="cart-btn">Cart Logo</button></a>
+             </div>
+        </div>
+     </div>
+     <div class="mainpage">
+        <h1>Ayojan Main Page</h1>
+     </div>
 </body>
 </html>

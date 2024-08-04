@@ -95,6 +95,14 @@ body {
 }
 
 /*Styling for bookingpage.html*/
+.venue-info > a > button{
+    border: 0px;
+    border-radius: 4px;
+    padding: 8px;
+}
+.venue-info > a > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 .search-container{
     display: flex;
     justify-content: center;
@@ -233,4 +241,328 @@ body {
 
 .search-by-filter button[type="submit"]:hover {
     background-color: #45a049;
+}
+
+
+
+.venue-item{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid black;
+    border-radius: 18px;
+
+}
+.venue-item:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+}
+
+.venue-info{
+    margin-right : auto;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.venue-img{
+    width: 200px;
+    height: 200px;
+}
+
+#img{
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    border-radius: 18px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+/*bookingpage_professional.html*/
+.body-professional{
+    border : 2px solid black;
+    border-radius: 14px;
+}
+.prof-item{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid black;
+    border-radius: 18px;
+
+}
+.prof-item:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+}
+.prof-info{
+    margin-right : auto;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.profpage-item{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
+    border: 0px;
+    border-radius: 18px;
+}
+
+
+
+.bottom-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.calendar{
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+#calendar-section{
+    padding: 15px;
+    margin-right: auto;
+}
+
+.ratings{
+    margin-left: 20px;
+    padding: 10px;
+    width : auto;
+}
+
+.professional-review{
+    background-color: #f4b0a9;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 550px;
+    border-radius: 8px;
+    margin:  25px;
+    ::-webkit-scrollbar {
+        display: hidden;
+    }
+}
+
+.professional-review:hover{
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+}
+
+
+.reviews{
+    padding: 14px;
+}
+
+.reviews:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+
+}
+
+.prof-info > a > button{
+    border: 0px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.prof-info > a > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+}
+
+
+
+
+/*veneupage.html*/
+.body-venuepage{
+    border : 2px solid black;
+    border-radius: 14px;
+}
+
+.venuepage-item{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
+    border: 0px;
+    border-radius: 18px;
+
+}
+
+
+
+.venuepage-info{
+    margin-right : auto;
+    padding: 20px;
+    max-width: 700px;
+}
+
+
+
+.bottom-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calendar{
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+#calendar-section{
+    padding: 15px;
+    margin-right: auto;
+}
+
+.ratings{
+    margin-left: 20px;
+    padding: 10px;
+    width : auto;
+}
+
+.venue-review{
+    background-color: #f4b0a9;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 550px;
+    border-radius: 8px;
+    margin:  25px;
+    ::-webkit-scrollbar {
+        display: hidden;
+    }
+}
+
+.venue-review:hover{
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+}
+
+
+.reviews{
+    padding: 14px;
+}
+
+.reviews:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+
+}
+
+.venuepage-info > a > button{
+    border: 0px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.venuepage-info > a > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+}
+
+
+
+/**bookingform.html*/
+/*professionalbooking-form.html*/
+.booking-forms{
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4b0a9;
+    border: 2px solid black;
+    border-radius: 12px;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    flex-direction: column;
+}
+.booking-forms > input{
+    width: 70%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 10px;
+}
+.booking-forms > textarea{
+    width: 70%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 10px;
+}
+.booking-forms > button{
+    border: 0px;
+    border-radius: 4px;
+    padding: 12px;
+}
+.booking-forms > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*cartpage.html*/
+.cart{
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4b0a9;
+    border: 2px solid black;
+    border-radius: 12px;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.cart > form > button {
+    border: 0px;
+    border-radius: 4px;
+    padding: 12px;
+}
+.cart > form > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.cart-info{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 80%;
+    padding: 20px;
+    margin: 15px;
+    background-color: rgb(236, 211, 211);
+
+}
+
+.cart-info:hover{
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-suggestions{
+    margin-top: 5px;
+    background-color: #f4b0a9;
+    text-align: center;
+    width: 155px;
+    height: auto;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+
 }

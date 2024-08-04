@@ -91,7 +91,6 @@ def bookingform(request,venue_id=0):
                     start_date = request.POST[f"start_date_{booking.id}"]
                     end_date = request.POST[f"end_date_{booking.id}"]
                     event_type = request.POST[f"event_type_{booking.id}"]
-                    time_duration = request.POST[f"time_duration_{booking.id}"]
                     
 
                     # Update the attributes of the booking object
@@ -101,7 +100,7 @@ def bookingform(request,venue_id=0):
                     booking.event_type = event_type
                     booking.food_type = "NOTHING"
                     booking.decoration_needed = False
-                    booking.time_duration = time_duration
+                    
                     booking.additional_services = "NOTHING"
 
                     # Grabbing the user
@@ -113,7 +112,7 @@ def bookingform(request,venue_id=0):
 
                     # Calculate the duration in days
                     duration_days = (end_date_cpy - start_date_cpy).days
-
+                    booking.time_duration = duration_days
                     # Calculate the total price
                     total_price = duration_days*24*(booking.professional.price_range)
                     
@@ -313,15 +312,14 @@ def professional_page(request,professional_id):
 #below i have created the booking form funciton this grabs the data from the form and created a booking in database.
 def professionalsbookingform(request,professional_id):
     if request.method == "POST":
-    
-        start_date = request.POST[f"start_date_{booking.id}"]
-        end_date = request.POST[f"end_date_{booking.id}"]
-        event_type = request.POST[f"event_type_{booking.id}"]
-        time_duration = request.POST[f"time_duration_{booking.id}"]
+
+        start_date = request.POST[f"start_date"]
+        end_date = request.POST[f"end_date"]
+        event_type = request.POST[f"event_type"]
 
         # Grabbing the user & the professional
         user = request.user
-        professional = get_object_or_404(Venues, pk=professional_id)
+        professional = get_object_or_404(Professional, pk=professional_id)
 
         start_date_cpy = datetime.strptime(start_date, "%Y-%m-%d")
         end_date_cpy = datetime.strptime(end_date, "%Y-%m-%d")
@@ -339,20 +337,21 @@ def professionalsbookingform(request,professional_id):
             end_date=end_date,
             num_people=0,
             event_type=event_type,
-            food_type="NO",
-            decoration_needed="NO",
-            time_duration=time_duration,
-            additional_services="NO",
+            food_type="FALSE",
+            decoration_needed=False,
+            time_duration=duration_days,
+            additional_services="FALSE",
             user=user, 
             professional=professional,
             total_price = total_price,
             payment_status = "UNDECIDED",
         )
         return redirect('Booking:cartpage') #this will actually be redirected to payment page.
-        
+
     else:   
         professional = get_object_or_404(Professional, pk=professional_id)
         return render(request, 'Booking/professionalsbooking_form.html',{'professional':professional})
+    
 
 
 def professionalsbookinglistadder(request,professional_id):

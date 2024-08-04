@@ -1,37 +1,51 @@
 {% extends 'Booking/common.html' %}
-
+{% load static %}
 {% block content %}
-    <main>
-        <section id="venue-list">
-            <div class="venue-item">
-                <h2>{{venue.venue_name}}</h2>
-                <p>Location: {{venue.city}}, {{venue.state}}, {{venue.address}}</p>
-                <p>Description: {{venue.description}}</p>
-                <p>Price: {{venue.base_price}}</p>
-
-                {% if user.is_authenticated %}
-                    <a href="{% url 'Booking:booking_form' venue.id %}"><button>Book Now</button></a>
-                {% else %}
-                    <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
-                {% endif %}
-
-            </div>
-        </section>
-
-    </main>
-    <section id="calendar-section">
-        <h2>Booking Calendar</h2>
-        <div id="calendar" style="width: 500px; height: 500px;"></div>
-    </section>
-    <sectino id="venue-review">
-        {% for review in reviews %}
-        <div>{{review.rating}}</div>
-        <div>{{review.user.username}}</div>
-        <div>{{review.comment}}</div>
-        
-        {% endfor %}
-    </sectino>
+    <div class="body-venuepage">
+        <main>
+            <section id="venuepage-list">
+                <div class="venuepage-item">
+                    <div class="venuepage-info">
+                        <h2>{{venue.venue_name}}</h2>
+                        <p>Location: {{venue.city}}, {{venue.state}}, {{venue.address}}</p>
+                        <p>Description: {{venue.description|slice:":30"}}</p>
+                        <p>Price: {{venue.base_price}}</p>
     
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'Booking:booking_form' venue.id %}"><button>Book Now</button></a>
+                        {% else %}
+                            <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
+                        {% endif %}
+                    </div>
+                    <div class="venue-img">
+                        <img  id="img" src="{% static 'Booking/IMAGES/images.png' %}" alt="venue">
+                    </div>
+                </div>
+    
+            </section>
+    
+        </main>
+        <div class="bottom-div">
+            <div class="calendar">
+                <section id="calendar-section">
+                    <h2>Booking Calendar</h2>
+                    <div id="calendar" style="width: 500px; height: 500px;"></div>
+                </section>
+            </div>
+            <div class="ratings">
+                <section class="venue-review">
+                    {% for review in reviews %}
+                    <div class="reviews">
+                        <div>Rating : {{review.rating}}/5</div>
+                        <div>User : {{review.user.username}}</div>
+                        <div>Comment : {{review.comment}}</div>    
+                    </div>
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+        
+    </div>
     
     
     <!--Full Calender CSS-->

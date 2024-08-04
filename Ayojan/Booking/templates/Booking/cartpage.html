@@ -4,31 +4,35 @@
 
     {% if user.is_authenticated %}
         {% if bookings %}
-        <div id="cart">
+        <div class="cart">
             <h2>Booking List</h2>
         
-            <!-- Venue Item -->
-            {% for booking in bookings %}
-                    {% if booking.venue.id %}
-                        <div >
-                            <h2>{{ booking.venue.venue_name }}</h2>
-                            <p>Location: {{ booking.venue.city }}, {{ booking.venue.state }}, {{ booking.venue.address }}</p>
-                            <p>Price: {{ booking.total_price }}</p>
-                        </div>
-                    
-                    {% endif %}
-                    
-                    {% if booking.professional.id %}
-                        <div>
-                            <h2>{{ booking.professional.name }}</h2>
-                            <p>{{ booking.professional.profession }}</p>
-                            <p>Price: {{ booking.professional.price_range }}</p>
-                        </div>
-                    {% endif %}
+                <!-- Venue Item -->
+                {% for booking in bookings %}
+                {% if booking.venue.id %}
+                <div class="cart-info">
+                    <div >
+                        <h2>{{ booking.venue.venue_name }}</h2>
+                        <p>Location: {{ booking.venue.city }}, {{ booking.venue.state }}, {{ booking.venue.address }}</p>
+                        <p>Price: {{ booking.total_price }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if booking.professional.id %}
+                <div class="cart-info">
+                    <div>
+                        <h2>{{ booking.professional.name }}</h2>
+                        <p>{{ booking.professional.profession }}</p>
+                        <p>Price: {{ booking.professional.price_range }}</p>
+                    </div>
+                </div>
+                {% endif %}
             {% endfor %}
+           
     
         
-            <div id="total-price">
+            <div class="total-price">
                 <p>Total Price: $2300</p>
             </div>
         

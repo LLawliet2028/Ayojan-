@@ -6,7 +6,7 @@
         {% if incomplete_bookings %}
         {% for booking in incomplete_bookings %}    
             {% if booking.venue %}
-                <form method="POST" action="{% url 'Booking:booking_form' booking.venue.id %}">
+                <form class="booking-forms"method="POST" action="{% url 'Booking:booking_form' booking.venue.id %}">
                     {% csrf_token %}
                 
                     <h3>{{booking.venue.venue_name}}</h3>
@@ -40,7 +40,7 @@
                     
             {% elif booking.professional %}
             <p>{{booking.professional.name}}</p>
-                <form method="POST" action="{% url 'Booking:booking_form' booking.professional.id %}">
+                <form class="booking-forms" method="POST" action="{% url 'Booking:booking_form' booking.professional.id %}">
                     {% csrf_token %}
                     <input type="hidden" id="professional_id" name="professional_id" value="{{ booking.professional.id }}">
                     <input type="hidden" id="booking_id" name="booking_id" value="{{ booking.id }}">
@@ -76,9 +76,10 @@
         
         {% else %}
             
-            <h1>{{ venue.venue_name }}</h1>
-            <h1>Booking Form</h1>
-            <form method="POST">
+
+            <form class="booking-forms" method="POST">
+                <h1>{{ venue.venue_name }}</h1>
+                <h1>To Book:</h1>
                 {% csrf_token %}
                 <input type="hidden" id="venue_id" name="venue_id" value="{{ venue.id }}">
                 <label for="start_date">Start Date:</label>

@@ -14,16 +14,13 @@
 <body>
     <div class="navbar">
        <div class="left-navbar">
-            <img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+            <a href="{% url 'mainpage:mainpage'%}"><img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo"></a>
             
             <div>
                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
             </div>
             <div>
                 <a href="{% url 'Booking:professional'%}">Professionals</a>
-            </div>
-            <div>
-                <a href="{% url 'Booking:search_view' %}">Search</a>
             </div>
         
        </div>
@@ -37,7 +34,7 @@
                     <a href="{% url 'Accounts:login_view' %}"><button id="login-btn">login</button></a>
                 {% endif %}
             </div>
-            <div class="cart">
+            <div class="cart-button">
                 <a href="{% url 'Booking:cartpage' %}"><button id="cart-btn">Cart Logo</button></a>
             </div>
        </div>
@@ -64,7 +61,7 @@
             },
             templates: {
                 suggestion: function(data) {
-                    return '<div>' + data.name + '</div>';
+                    return '<div class="search-suggestions">' + data.name + '</div>';
                 }
             }
         });
