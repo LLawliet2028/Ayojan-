@@ -4,7 +4,7 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import JsonResponse
-from .search_logic import search_venues
+from .search_logic import search_venues, search_professionals
 from django.core.paginator import Paginator
 
 
@@ -237,13 +237,32 @@ def cartpage(request):
 #below function is for search suggestion when a person types in search bar
 def search_suggestions(request):
     query = request.GET.get('query', '')
+
     if query:
-        suggestions = Venues.objects.filter(
+        # Get suggestions from Venues
+        venue_suggestions = list(Venues.objects.filter(
             Q(venue_name__icontains=query) |
             Q(city__icontains=query) |
             Q(state__icontains=query)
-        )[:10]
-        data = [{'name': suggestion.venue_name} for suggestion in suggestions]
+        )[:10])
+
+        suggestions = venue_suggestions 
+        data = [{'name': suggestion.venue_name }for suggestion in suggestions]
+        return JsonResponse(data, safe=False)
+    return JsonResponse([], safe=False)
+
+def search_suggestions_prof(request):
+    query = request.GET.get('query', '')
+    if query:
+        # Get suggestions from Professional
+        suggestions = list(Professional.objects.filter(
+            Q(profession__icontains=query) |
+            Q(city__icontains=query) |
+            Q(state__icontains=query) |
+            Q(name__icontains=query)
+        )[:10])
+        
+        data = [{'name': suggestion.name }for suggestion in suggestions]
         return JsonResponse(data, safe=False)
     return JsonResponse([], safe=False)
 
@@ -284,7 +303,11 @@ def checkout_verification(request):
 
 
 def booking_professional_page(request):
-    professional = Professional.objects.all()
+    search_results = search_professionals(request)
+    if search_results is not None:
+        return render(request, 'Booking/bookingpage_professional.html', {'page_obj': search_results})
+    else:
+        professional = Professional.objects.all()
     # Implement pagination
     paginator = Paginator(professional, 20)  # Show 20 professionals per page
     page_number = request.GET.get('page')

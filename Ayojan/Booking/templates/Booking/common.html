@@ -73,6 +73,34 @@
         });
     });
 
+
+    $(document).ready(function() {
+        $('#search-bar-professionals').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            name: 'professionals',
+            display: 'name',
+            source: function(query, syncResults, asyncResults) {
+                $.get('/booking/search-suggestions-professionals/', { query: query }, function(data) {
+                    asyncResults(data);
+                });
+            },
+            templates: {
+                suggestion: function(data) {
+                    return '<div class="search-suggestions">' + data.name + '</div>';
+                }
+            }
+        });
+
+        // Ensure the form is submitted when a suggestion is selected
+        $('#search-bar-professionals').bind('typeahead:select', function(ev, suggestion) {
+            $(this).typeahead('val', suggestion.name);
+            $('#search-form').submit();
+        });
+    });
+
     //side filter panel
     document.getElementById("openFilterMenuBtn").onclick = function() {
         document.getElementById("filterMenu").style.width = "300px";

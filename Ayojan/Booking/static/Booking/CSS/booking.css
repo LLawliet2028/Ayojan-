@@ -135,8 +135,7 @@ body {
     display: flex;
     align-items: center;
 }
-
-#search-bar{
+#search-bar-professionals,#search-bar{
     border : 0px;
     padding: 10px;
 
