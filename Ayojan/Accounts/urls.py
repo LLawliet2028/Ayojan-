@@ -13,4 +13,7 @@ urlpatterns = [
     path("signout/",views.signout,name="signout"),
     path('profile-info/',views.profile_info,name="personal_info"),
     path('activate/<uidb64>/<token>',views.activate_acc,name="activate"),
+    path('changename/',views.check_auth,name="change_name"),
+    path('change/',views.change_name,name="change"),
+    path('changepass/',views.change_pass,name="change_pass")
 ]

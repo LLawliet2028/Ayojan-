@@ -133,3 +133,60 @@ def signout(request):
 
 def profile_info(request):
     return render(request, 'Accounts/personal_info.html')
+
+def check_auth(request):
+    field_to_change = request.GET.get('field')
+    if request.method == "POST":
+        myuser = request.user
+        if authenticate(request, username=myuser.email, password=request.POST['password']):
+            if field_to_change == "changeinfo":
+                return render(request, 'Accounts/change_name.html')
+            else :
+                return render(request,'Accounts/change_password.html')
+        else:
+            return redirect('Accounts:profile_view')
+    else:
+        return render(request, 'Accounts/confirm_password.html')
+
+def change_name(request):
+    myuser = request.user
+    
+    if request.method == "POST":
+        if "changeusernameto" in request.POST and request.POST["changeusernameto"]:
+            myuser.username = request.POST["changeusernameto"]
+        if "changefirstnameto" in request.POST and request.POST["changefirstnameto"]:
+            myuser.first_name = request.POST["changefirstnameto"]
+        if "changelastnameto" in request.POST and request.POST["changelastnameto"]:
+            myuser.last_name = request.POST["changelastnameto"]
+        if "changeemailto" in request.POST and request.POST["changeemailto"]:
+            myuser.email = request.POST["changeemailto"]
+        myuser.save()
+        return redirect('Accounts:profile_view')
+    else:
+        return render(request, 'Accounts/change_name.html')
+    
+from django.contrib.auth import update_session_auth_hash  # To prevent logging out after password change
+
+def change_pass(request):
+    myuser = request.user
+
+    if request.method == "POST":
+        password = request.POST.get('Password')
+        confirm_password = request.POST.get('CONFIRM_PASSWORD')
+
+        # Check if both password fields match
+        if password and confirm_password and password == confirm_password:
+            myuser.set_password(password)  # Set the new password
+            myuser.save()
+
+            # Update the session with the new password, so the user doesn't get logged out
+            update_session_auth_hash(request, myuser)
+
+            return redirect('Accounts:profile_view')
+        else:
+            # If passwords don't match, render the form again with an error message
+            return render(request, 'Accounts/change_password.html', {
+                'error': 'Passwords do not match'
+            })
+    else:
+        return render(request, 'Accounts/change_password.html')
