@@ -70,7 +70,7 @@ class Professional(models.Model):
     availability = models.BooleanField()
     contact_email = models.CharField(max_length=255,blank=True)
     contact_number = models.IntegerField(blank=True,default= 0)
-
+    image = models.ImageField(upload_to='prof_images/', null=True, blank=True)
     def __str__(self):
         return self.name
 
