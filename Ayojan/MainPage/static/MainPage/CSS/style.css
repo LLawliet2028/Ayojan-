@@ -98,3 +98,36 @@ body {
 .mainpage{
     text-align: center;
 }
+
+
+/*Icons*/
+.profile-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cart-btn-icon{
+    padding: 4px;
+}
+.cart-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+}

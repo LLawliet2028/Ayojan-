@@ -1,5 +1,5 @@
 * {
-    font-family: monospace, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS','Helvetica',monospace;
 }
 
 ::-webkit-scrollbar {
@@ -25,13 +25,18 @@ a {
 }
 
 body {
+    background-image: url('../IMAGES/Untitled_design-removebg.png');
+    background-position: top center; /* Position the image at the top center */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Ensure the image covers the entire width */
     box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     height: 100%;
     background-color: antiquewhite;
 }
 
+/* {% load static %}*/
 .navbar {
     background-color: #f1cfcb;
     display: flex;
@@ -40,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 
 #navbar-logo {
     width: 70px;
@@ -70,12 +76,20 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+
+.nav-btn:hover{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+}
+
 #profile-btn{
     width: auto;
     height: auto;
     padding: 8px;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 #login-btn{
@@ -104,6 +118,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .search-container{
+    padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,14 +170,14 @@ body {
 
 #openFilterMenuBtn {
     font-size: 20px;
-    padding: 10px 20px;
     cursor: pointer;
+    padding-top: 4px;
     border: 0px;
     border-radius: 8px;
-    padding: 10px;
     margin-left:10px ;
 }
 #openFilterMenuBtn:hover {
+    padding: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -239,17 +254,24 @@ body {
 }
 
 .search-by-filter button[type="submit"]:hover {
+    padding: 4px;
     background-color: #45a049;
 }
 
 
+.venue-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
 .venue-item{
     padding: 10px;
     margin: 10px;
     display: flex;
-    flex-direction: row;
-
+    width : 350px;
+    flex-direction: column;
     border: 1px solid black;
     border-radius: 18px;
 
@@ -271,10 +293,12 @@ body {
 }
 
 #img{
-    width: 200px;
+    width: 300px;
     height: 200px;
     margin-right: 10px;
+    margin-left: 10px;
     border-radius: 18px;
+
 }
 
 .pagination{
@@ -292,16 +316,25 @@ body {
     border : 2px solid black;
     border-radius: 14px;
 }
+
+.prof-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .prof-item{
     padding: 10px;
     margin: 10px;
     display: flex;
-    flex-direction: row;
-
+    width : 350px;
+    flex-direction: column;
     border: 1px solid black;
     border-radius: 18px;
 
 }
+
 .prof-item:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color:#f4b0a9;
@@ -312,15 +345,6 @@ body {
     padding-left: 15px;
 }
 
-.profpage-item{
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-
-    border: 0px;
-    border-radius: 18px;
-}
 
 
 
@@ -547,8 +571,14 @@ body {
     padding: 20px;
     margin: 15px;
     background-color: rgb(236, 211, 211);
-
+    display: flex;
+    flex-direction: row;
 }
+
+.info{
+    margin-left : 150px;
+}
+
 
 .cart-info:hover{
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
@@ -564,4 +594,48 @@ body {
     border: 1px solid black;
     border-radius: 8px;
 
+}
+
+@media (max-width:778px){
+    .cart-info{
+        border: 1px solid black;
+        border-radius: 8px;
+        width: 80%;
+        padding: 20px;
+        margin: 15px;
+        background-color: rgb(236, 211, 211);
+        display: flex;
+        flex-direction: column;
+    }
+    .info{
+        margin-left : 10px;
+    }
+    
+}
+
+
+
+/*Icons*/
+.profile-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cart-btn-icon{
+    padding: 4px;
+}
+.cart-btn-icon:hover{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
 }
