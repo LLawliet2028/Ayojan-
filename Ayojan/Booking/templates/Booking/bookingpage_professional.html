@@ -46,7 +46,7 @@
     <div class="prof-item">
         <div class="prof-info">
             <div class="prof-img">
-                <img  id="img" src="{% static 'Booking/IMAGES/phtographer.png' %}" alt="venue">
+                <img  id="img" src="..{{ professional.image.url }}" alt="venue">
             </div>
             <a href="{% url 'Booking:professionalspage' professional.id %}">
                 <h2>{{ professional.name }}</h2>

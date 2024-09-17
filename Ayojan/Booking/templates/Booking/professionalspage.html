@@ -5,6 +5,9 @@
     <main>
         <section id="prof-list">
             <div class="profpage-item">
+                    <div class="prof-img">
+                        <img  id="prof-image" src="..{{ professional.image.url }}" alt="venue">
+                    </div>
                 <div class="prof-info">
                     <h2>{{ professional.name }}</h2>
                     <p>{{ professional.profession }}</p>
@@ -17,9 +20,6 @@
                     {% else %}
                         <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
                     {% endif %}
-                </div>
-                <div class="prof-img">
-                    <img  id="img" src="{% static 'Booking/IMAGES/phtographer.png' %}" alt="venue">
                 </div>
             </div>
         </section>

@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = 'Randomly upload images to professionals based on their profession'
 
     def handle(self, *args, **kwargs):
-        image_folder = 'D:\\CodeStuff\\Ayojan\\Mock_images'  # Folder where the images are stored
+        image_folder = 'D:\\CodeStuff\\Ayojan\\Mock_images_prof'  # Folder where the images are stored
         images = os.listdir(image_folder)  # List all image files in the folder
         professionals = Professional.objects.all()
 

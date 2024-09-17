@@ -208,7 +208,7 @@ def bookinglistadder(request,venue_id):
             payment_status = "UNDECIDED",
     )
     venues = Venues.objects.all()
-    paginator = Paginator(venues, 20)  # Show 20 venues per page
+    paginator = Paginator(venues, 21)  # Show 20 venues per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -309,7 +309,7 @@ def booking_professional_page(request):
     else:
         professional = Professional.objects.all()
     # Implement pagination
-    paginator = Paginator(professional, 20)  # Show 20 professionals per page
+    paginator = Paginator(professional, 21)  # Show 20 professionals per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -388,7 +388,7 @@ def professionalsbookinglistadder(request,professional_id):
     )
     professional = Professional.objects.all()
     # Implement pagination
-    paginator = Paginator(professional, 20)  # Show 20 professionals per page
+    paginator = Paginator(professional, 21)  # Show 20 professionals per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

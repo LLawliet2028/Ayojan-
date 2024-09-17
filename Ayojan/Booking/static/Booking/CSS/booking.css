@@ -339,8 +339,23 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color:#f4b0a9;
 }
+
+.profpage-item{
+    display: flex;
+    flex-direction: row;
+}
+
+.prof-img{
+    margin: 20px;
+}
+#prof-image{
+    width: 400px;
+    height: 300px;
+}
+
 .prof-info{
-    margin-right : auto;
+    margin-left : auto;
+    margin-right: 50px;
     padding: 10px;
     padding-left: 15px;
 }
