@@ -5,6 +5,9 @@
         <main>
             <section id="venuepage-list">
                 <div class="venuepage-item">
+                    <div class="venuepage-img">
+                        <img  id="page-image" src="..{{ venue.image.url }}" alt="venue">
+                    </div>
                     <div class="venuepage-info">
                         <h2>{{venue.venue_name}}</h2>
                         <p>Location: {{venue.city}}, {{venue.state}}, {{venue.address}}</p>
@@ -17,9 +20,7 @@
                             <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
                         {% endif %}
                     </div>
-                    <div class="venue-img">
-                        <img  id="img" src="..{{ venue.image.url }}" alt="venue">
-                    </div>
+
                 </div>
     
             </section>

@@ -281,6 +281,8 @@ body {
     background-color:#f4b0a9;
 }
 
+
+
 .venue-info{
     margin-right : auto;
     padding: 10px;
@@ -345,19 +347,30 @@ body {
     flex-direction: row;
 }
 
-.prof-img{
+.profpage-img{
     margin: 20px;
 }
-#prof-image{
+
+#page-image{
     width: 400px;
     height: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 18px;
 }
 
 .prof-info{
-    margin-left : auto;
-    margin-right: 50px;
     padding: 10px;
     padding-left: 15px;
+}
+
+.profpage-info{
+    margin-top: 10px;
+    margin-left : 30px;
+    margin-right: 80px;
+    padding: 10px;
+    padding-left: 15px;
+
 }
 
 
@@ -414,6 +427,17 @@ body {
 
 }
 
+.profpage-info > a > button{
+    border: 0px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.profpage-info > a > button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:#f4b0a9;
+}
+
 .prof-info > a > button{
     border: 0px;
     border-radius: 4px;
@@ -424,7 +448,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color:#f4b0a9;
 }
-
 
 
 
@@ -446,11 +469,12 @@ body {
 }
 
 
-
 .venuepage-info{
-    margin-right : auto;
-    padding: 20px;
-    max-width: 700px;
+    margin-top: 10px;
+    margin-left : 30px;
+    margin-right: 50px;
+    padding: 10px;
+    padding-left: 15px;
 }
 
 
