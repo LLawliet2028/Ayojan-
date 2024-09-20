@@ -16,6 +16,7 @@ django.setup()
 # Wrap the WSGI application in a try-except block for better error reporting
 try:
     application = get_wsgi_application()
+    app = application
 except Exception as e:
     print(f"Error loading the application: {e}", file=sys.stderr)
     raise
