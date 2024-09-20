@@ -5,9 +5,9 @@
     <main>
         <section id="prof-list">
             <div class="profpage-item">
-                    <div class="profpage-img">
-                        <img  id="page-image" src="..{{ professional.image.url }}" alt="venue">
-                    </div>
+                <div class="profpage-img">
+                    <img  id="page-image" src="..{{ professional.image.url }}" alt="venue">
+                </div>
                 <div class="profpage-info">
                     <h2>{{ professional.name }}</h2>
                     <p>{{ professional.profession }}</p>
@@ -21,17 +21,16 @@
                         <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
                     {% endif %}
                 </div>
+                <div class="calendar">
+                    <section class="calendar-section">
+                        <div id="calendar"></div>
+                    </section>
+                </div>
             </div>
         </section>
 
     </main>
     <div class="bottom-div">
-        <div class="calendar">
-            <section id="calendar-section">
-                <h2>Booking Calendar</h2>
-                <div id="calendar" style="width: 500px; height: 500px;"></div>
-            </section>
-        </div>
         <div class="rating">
             <section class="professional-review">
                 {% for review in reviews %}

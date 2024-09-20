@@ -35,8 +35,42 @@
              </div>
         </div>
      </div>
-      <div class="mainpage">
-        <h1>Ayojan Main Page</h1>
-     </div>
+     <div class="mainpage">
+        <div class="banner">
+            <div class="img-slideshow">
+                {% for image in images %}
+                    <img src="{% static image %}" alt="Slideshow Image" class="slide">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="about-us">
+
+        </div>
+        <div class="reviews">
+
+        </div>
+        <div class="book-now">
+
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+            const slides = document.getElementsByClassName('slide');
+
+            function showSlide(index) {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                }
+                slides[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 3000); // Change image every 3 seconds
+
+    </script>
 </body>
 </html>

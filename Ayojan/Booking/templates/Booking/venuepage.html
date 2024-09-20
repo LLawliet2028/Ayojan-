@@ -20,19 +20,18 @@
                             <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
                         {% endif %}
                     </div>
-
+                  
+                    <div class="calendar">
+                        <section class="calendar-section">
+                            <div id="calendar"></div>
+                        </section>
+                    </div>
                 </div>
-    
+
             </section>
-    
         </main>
         <div class="bottom-div">
-            <div class="calendar">
-                <section id="calendar-section">
-                    <h2>Booking Calendar</h2>
-                    <div id="calendar" style="width: 500px; height: 500px;"></div>
-                </section>
-            </div>
+
             <div class="ratings">
                 <section class="venue-review">
                     {% for review in reviews %}

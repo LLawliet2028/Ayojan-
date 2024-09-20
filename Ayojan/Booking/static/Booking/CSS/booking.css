@@ -25,9 +25,6 @@ a {
 }
 
 body {
-    background-image: url('../IMAGES/Untitled_design-removebg.png');
-    background-position: top center; /* Position the image at the top center */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Ensure the image covers the entire width */
     box-sizing: border-box;
     margin: 0;
@@ -383,13 +380,21 @@ body {
 
 }
 .calendar{
-    margin-left: 25px;
-    margin-right: auto;
+    width: 500px;
+    height: 400px;
+}
+#calendar{
+    width: 400px;
+    height: 300px;
+    margin-left: auto;
+}
+.calendar > h2{
+    margin-left: 80px;
 }
 
-#calendar-section{
+.calendar-section{
     padding: 15px;
-    margin-right: auto;
+    margin-left: auto;
 }
 
 .ratings{
@@ -481,8 +486,8 @@ body {
 
 .bottom-div{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: baseline;
 
 }
 

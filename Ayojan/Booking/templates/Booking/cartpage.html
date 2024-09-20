@@ -25,7 +25,10 @@
                 
                 {% if booking.professional.id %}
                 <div class="cart-info">
-                    <div>
+                    <div class="venue-img">
+                        <img  id="img" src="..{{ booking.professional.image.url }}" alt="venue">
+                    </div>
+                    <div class="info">
                         <h2>{{ booking.professional.name }}</h2>
                         <p>{{ booking.professional.profession }}</p>
                         <p>Price: {{ booking.professional.price_range }}</p>
