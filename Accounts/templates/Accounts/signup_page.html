@@ -9,11 +9,11 @@
     </head>
     <body>
         <div class="navbar">
-            <img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+            <img id="navbar-logo" src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
         </div>
         <div class="middle">
             <div class="signup-div">
-                <img id="signup-div-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+                <img id="signup-div-logo" src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
                 <div class="signup-form-div">
                     {% if messages %}
                         <div>
@@ -24,7 +24,7 @@
                     {% endif %}
                   <form action="{% provider_login_url 'google' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" id="google-login-button"><img id="google-logo" src="{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}"><span id="google-login-text">Login</span></button>
+                    <button type="submit" id="google-login-button"><img id="google-logo" src="..{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}"><span id="google-login-text">Login</span></button>
                   </form>
                   <span>-----Or-----</span>
                   <form class="signup-form" method="POST">

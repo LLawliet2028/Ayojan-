@@ -19,15 +19,15 @@
   </script>
   {% endif %}
   <div class="navbar">
-    <img id="navbar-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+    <img id="navbar-logo" src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
   </div>
   <div class="middle">
     <div class="login-div">
-      <img id="login-div-logo" src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+      <img id="login-div-logo" src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
       <div class="login-form-div">
         <form action="{% provider_login_url 'google' %}" method="post">
           {% csrf_token %}
-          <button type="submit" id="google-login-button"><img id="google-logo" src="{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}"><span id="google-login-text">Login</span></button>
+          <button type="submit" id="google-login-button"><img id="google-logo" src="..{% static 'Accounts/IMAGES/icons8-google-logo-48.png'%}"><span id="google-login-text">Login</span></button>
         </form>
         <span>-----Or-----</span>
         <form class="login-form" method="POST">
