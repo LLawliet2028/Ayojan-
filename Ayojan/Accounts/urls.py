@@ -17,3 +17,10 @@ urlpatterns = [
     path('change/',views.change_name,name="change"),
     path('changepass/',views.change_pass,name="change_pass")
 ]
+
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,7 @@
 {% extends 'Booking/common.html' %}
 
 {% block content %}
-
+<link rel="stylesheet" href="..{% static 'Booking/CSS/booking.css'%}">
     {% if user.is_authenticated %}
         {% if bookings %}
         <div class="cart">

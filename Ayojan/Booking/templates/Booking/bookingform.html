@@ -1,7 +1,7 @@
 {% extends 'Booking/common.html' %}
 
 {% block content %}
-
+<link rel="stylesheet" href="..{% static 'Booking/CSS/booking.css'%}">
     
         {% if incomplete_bookings %}
         {% for booking in incomplete_bookings %}    
