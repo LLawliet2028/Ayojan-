@@ -15,7 +15,7 @@ from Ayojan import settings
 #below funciton loads up profile_view html
 def profile_view(request):
 
-    return render(request, 'Accounts\personal_info.html')
+    return render(request, 'Accounts/personal_info.html')
 
 
 #below funciton loads up login_page html
@@ -36,7 +36,7 @@ def login_view(request):
             messages.error(request, 'Invalid Username or Password')
             return redirect('Accounts:login_view')
     else:
-        return render(request, 'Accounts\login_page.html')
+        return render(request, 'Accounts/login_page.html')
 
 
 #below funciton loads up signup_page html
@@ -103,9 +103,9 @@ def signup_view(request):
         email.fail_silently = True
         email.send()
 
-        return render(request, 'Accounts\login_page.html')  
+        return render(request, 'Accounts/login_page.html')  
     else:
-        return render(request, 'Accounts\signup_page.html')
+        return render(request, 'Accounts/signup_page.html')
 
 
 def activate_acc(request, uidb64, token):
@@ -132,7 +132,7 @@ def signout(request):
 
 
 def profile_info(request):
-    return render(request, 'Accounts\personal_info.html')
+    return render(request, 'Accounts/personal_info.html')
 
 def check_auth(request):
     field_to_change = request.GET.get('field')
@@ -140,13 +140,13 @@ def check_auth(request):
         myuser = request.user
         if authenticate(request, username=myuser.email, password=request.POST['password']):
             if field_to_change == "changeinfo":
-                return render(request, 'Accounts\change_name.html')
+                return render(request, 'Accounts/change_name.html')
             else :
-                return render(request,'Accounts\change_password.html')
+                return render(request,'Accounts/change_password.html')
         else:
             return redirect('Accounts:profile_view')
     else:
-        return render(request, 'Accounts\confirm_password.html')
+        return render(request, 'Accounts/confirm_password.html')
 
 def change_name(request):
     myuser = request.user
@@ -163,7 +163,7 @@ def change_name(request):
         myuser.save()
         return redirect('Accounts:profile_view')
     else:
-        return render(request, 'Accounts\change_name.html')
+        return render(request, 'Accounts/change_name.html')
     
 from django.contrib.auth import update_session_auth_hash  # To prevent logging out after password change
 
@@ -185,8 +185,8 @@ def change_pass(request):
             return redirect('Accounts:profile_view')
         else:
             # If passwords don't match, render the form again with an error message
-            return render(request, 'Accounts\change_password.html', {
+            return render(request, 'Accounts/change_password.html', {
                 'error': 'Passwords do not match'
             })
     else:
-        return render(request, 'Accounts\change_password.html')
+        return render(request, 'Accounts/change_password.html')
