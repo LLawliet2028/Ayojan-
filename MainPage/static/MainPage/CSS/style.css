@@ -1,6 +1,5 @@
-/* General styles */
 * {
-    font-family: monospace, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS','Helvetica',monospace;
 }
 
 ::-webkit-scrollbar {
@@ -26,15 +25,20 @@ a {
 }
 
 body {
+    border: 8px #7247a6 double;
+    border-radius: 20px;
+    background-size: cover;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 4px;
+    padding: 8px;
     height: 100%;
     background-color: antiquewhite;
 }
 
 .navbar {
-    background-color: #f1cfcb;
+    border: 2px solid #f1cfcb;
+    border-radius: 12px;
+    background-color: #f1bcb6;
     display: flex;
     width: 100%;
     gap: 10px;
@@ -71,20 +75,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Profile, login, and cart icons */
-.profile-btn-icon:hover,
-.login-btn-icon:hover,
-.cart-btn-icon:hover {
-    padding: 8px;
-    border-radius: 18px;
-    background-color: white;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-.cart-btn-icon {
-    padding: 4px;
-}
-
 .nav-btn:hover {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -92,40 +82,101 @@ body {
     padding: 10px;
 }
 
+#profile-btn {
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 0px;
+    border-radius: 12px;
+}
+
+#login-btn {
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
+}
+
 /* Main page layout */
 .mainpage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
     height: 100%;
 }
 
 .banner {
-    background-color: red;
-    height: 25%; /* Takes up 25% of the page height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
     width: 100%;
-}
-
-.img-slideshow {
     position: relative;
-    width: 100%;
-    height: 100%;
+}
+
+
+/* Slideshow container */
+.img-slideshow {
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 400px;
     overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8px ;
 }
 
-.slide {
-    width: 100%;
-    height: 100%;
+.img-slideshow > img{
+    border-radius: 12px;
+   padding: 8px;
+   margin-left: 4px;
+   margin-right: 4px;
+
+}
+
+/* The slides */
+.carousel-slide {
     display: none;
-    transition: opacity 1s;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+    width: 80%; /* Make sure the image fits well */
+    height: 500px;
+    margin: 12px;
+    border-radius: 12px;
 }
 
-.active {
+.carousel-slide.active {
     display: block;
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+    
+}
+
+.carousel-slide.prev {
+    display: block;
+    opacity: 1;
+    transform: translateX(-100%);
+    z-index: 0;
+    filter: blur(2px);
+}
+
+.carousel-slide.next {
+    display: block;
+    opacity: 1;
+    transform: translateX(100%);
+    z-index: 0;
+    filter: blur(2px);
 }
 
 /* About Us section */
 .about-us {
     background-color: lightblue;
-    height: 25%; /* Takes up the next 25% of the page height */
+    height: 25%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -138,7 +189,7 @@ body {
 /* Reviews section */
 .reviews {
     background-color: lightgreen;
-    height: 25%; /* Takes up the next 25% of the page height */
+    height: 25%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -151,7 +202,7 @@ body {
 /* Book Now section */
 .book-now {
     background-color: lightcoral;
-    height: 25%; /* Takes up the remaining 25% of the page height */
+    height: 25%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;

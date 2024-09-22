@@ -9,12 +9,15 @@ from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from django.utils.encoding import force_bytes,force_str
 from . tokens import generate_token
 from Ayojan import settings
-
+from django.contrib.auth.decorators import login_required
 
 
 #below funciton loads up profile_view html
+@login_required
 def profile_view(request):
-
+    user = request.user
+    if not user.is_authenticated:  
+        return redirect('Accounts/login_page.html')
     return render(request, 'Accounts/personal_info.html')
 
 
@@ -132,6 +135,9 @@ def signout(request):
 
 
 def profile_info(request):
+    user = request.user
+    if not user.is_authenticated:  
+        return redirect('Accounts/login_page.html')
     return render(request, 'Accounts/personal_info.html')
 
 def check_auth(request):

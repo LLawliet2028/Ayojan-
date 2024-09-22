@@ -25,17 +25,21 @@ a {
 }
 
 body {
+    border : 8px #7247a6 double;
+    border-radius: 20px;
     background-size: cover; /* Ensure the image covers the entire width */
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 4px;
+    padding: 8px;
     height: 100%;
     background-color: antiquewhite;
 }
 
 /* {% load static %}*/
 .navbar {
-    background-color: #f1cfcb;
+    border : 2px solid black;
+    border-radius: 12px;
+    background-color: #f1bcb6;
     display: flex;
     width: 100%;
     gap: 10px;
@@ -114,21 +118,27 @@ body {
 .venue-info > a > button:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+/* .venue-section{
+    border : 8px black double;
+    margin-top: 20px;
+    padding: 8px;
+} */
 .search-container{
     padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px;
-    background-color: #f1cfcb;
-    border: 0px;
+    gap:14px;
+    background-color: #f1bcb6;
+    border: 2px solid black; 
     border-radius: 100px;
     margin-top: 10px;
 }
 
 .search-container > div{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -143,9 +153,10 @@ body {
     border-radius: 5px;
     padding: 8px;
     text-align: center;
-    align-items: center;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
 }
 #search-bar-professionals,#search-bar{
     border : 0px;
@@ -157,6 +168,7 @@ body {
     border: 0px;
     border-radius: 8px;
     padding: 10px;
+    margin-left: 4px;
 }
 
 .search-bar > button:hover{
@@ -174,7 +186,6 @@ body {
     margin-left:10px ;
 }
 #openFilterMenuBtn:hover {
-    padding: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -251,9 +262,10 @@ body {
 }
 
 .search-by-filter button[type="submit"]:hover {
-    padding: 4px;
-    background-color: #45a049;
+    padding: 10px 20px;
+    background-color: #f1cfcb;
 }
+
 
 
 .venue-list{
@@ -269,13 +281,13 @@ body {
     display: flex;
     width : 350px;
     flex-direction: column;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 18px;
 
 }
 .venue-item:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color:#f4b0a9;
+    background-color:#f1bcb6;
 }
 
 
@@ -329,9 +341,8 @@ body {
     display: flex;
     width : 350px;
     flex-direction: column;
-    border: 1px solid black;
+    border: 2px dashed black;
     border-radius: 18px;
-
 }
 
 .prof-item:hover {
@@ -630,14 +641,19 @@ body {
 
 .search-suggestions{
     margin-top: 5px;
+    margin-right : 2px;
     background-color: #f4b0a9;
     text-align: center;
-    width: 155px;
+    width: 150px;
     height: auto;
     padding: 8px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
+}
 
+.search-suggestion-wrapper {
+    background-color: white;
+    padding: 5px;  /* Adjust padding as needed */
 }
 
 @media (max-width:778px){

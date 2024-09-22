@@ -24,9 +24,9 @@
 <script>
     $(document).ready(function() {
         $('#search-bar').typeahead({
-            hint: true,
+            hint: false,
             highlight: true,
-            minLength: 1
+            minLength: 1,
         }, {
             name: 'venues',
             display: 'name',
@@ -37,7 +37,9 @@
             },
             templates: {
                 suggestion: function(data) {
-                    return '<div class="search-suggestions">' + data.name + '</div>';
+                    return '<div class="search-suggestion-wrapper" style="background-color: white; padding: 5px;">' + 
+                       '<div class="search-suggestions">' + data.name + '</div>' + 
+                   '</div>';
                 }
             }
         });
@@ -52,7 +54,7 @@
 
     $(document).ready(function() {
         $('#search-bar-professionals').typeahead({
-            hint: true,
+            hint: false,
             highlight: true,
             minLength: 1
         }, {

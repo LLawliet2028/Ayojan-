@@ -109,12 +109,18 @@ WSGI_APPLICATION = 'Ayojan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.zidnjudhmhwiwfudqmov',
+        'PASSWORD': 'AAYOJAN!@#$',
+        'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
+        'PORT': '6543',  # PostgreSQL's default port
     }
 }
+
 
 
 # Password validation
