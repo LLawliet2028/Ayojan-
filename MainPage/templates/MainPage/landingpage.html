@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="..{% static 'MainPage/CSS/style.css' %}">
+    <link rel="stylesheet" href="{% static 'MainPage/CSS/style.css' %}">
 
 </head>
 
@@ -15,7 +15,7 @@
 
         <div class="left-navbar">
             <a href="{% url 'mainpage:mainpage'%}"><img id="navbar-logo"
-                    src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo"></a>
+                    src="{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo"></a>
             <div class="nav-btn">
                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
             </div>
@@ -55,7 +55,7 @@
         <div class="banner">
             <div class="img-slideshow">
                 {% for image in images %}
-                <img src="..{% static image %}" alt="Slideshow Image" class="carousel-slide">
+                <img src="{% static image %}" alt="Slideshow Image" class="carousel-slide">
                 {% endfor %}
             </div>
         </div>
