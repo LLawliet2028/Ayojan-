@@ -25,7 +25,7 @@ a {
 }
 
 body {
-    border : 8px black double;
+    border : 8px #7247a6 double;
     border-radius: 20px;
     background-size: cover; /* Ensure the image covers the entire width */
     box-sizing: border-box;
@@ -37,7 +37,7 @@ body {
 
 /* {% load static %}*/
 .navbar {
-    border : 2px solid #f1cfcb;
+    border : 2px solid black;
     border-radius: 12px;
     background-color: #f1bcb6;
     display: flex;
@@ -131,7 +131,7 @@ body {
     align-items: center;
     gap:14px;
     background-color: #f1bcb6;
-    border: 2px dashed black; 
+    border: 2px solid black; 
     border-radius: 100px;
     margin-top: 10px;
 }
@@ -281,7 +281,7 @@ body {
     display: flex;
     width : 350px;
     flex-direction: column;
-    border: 2px dashed black;
+    border: 2px solid black;
     border-radius: 18px;
 
 }
