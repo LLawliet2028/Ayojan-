@@ -19,7 +19,8 @@ urlpatterns = [
     path('professionals/',views.booking_professional_page,name="professional"),
     path('professional/<int:professional_id>',views.professional_page,name='professionalspage'),
     path('professionalsform/<int:professional_id>',views.professionalsbookingform,name="professionalsbookingform"),
-    path('succesfullyaddedprofessional/<int:professional_id>',views.professionalsbookinglistadder,name="professionalsbookinglistadder")
+    path('succesfullyaddedprofessional/<int:professional_id>',views.professionalsbookinglistadder,name="professionalsbookinglistadder"),
+    path('arview/<int:venue_id>',views.arview,name="arview")
 
 
 

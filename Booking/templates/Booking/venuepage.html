@@ -47,7 +47,7 @@
                         {% else %}
                             <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
                         {% endif %}
-                        <a><button>AR View</button></a>
+                        <a href="{% url 'Booking:arview' venue.id %}"><button>AR View</button></a>
                     </div>
                   
                     <div class="calendar">

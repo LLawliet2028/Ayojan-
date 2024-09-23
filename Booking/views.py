@@ -404,3 +404,7 @@ def professionalsbookinglistadder(request,professional_id):
         'page_obj': page_obj,
     }
     return render(request, 'Booking/bookingpage_professional.html', context)
+
+
+def arview(request,venue_id):
+    return render(request,'Booking/arview.html')
