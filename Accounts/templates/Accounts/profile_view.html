@@ -14,7 +14,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
         </label>
         <div class="left-navbar">
-            <img id="navbar-logo" src="..{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
+            <img id="navbar-logo" src=".{% static 'Accounts/IMAGES/ayojan-logo1.png'%}" alt="logo">
             
             <div class="nav-btn">
                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
@@ -41,7 +41,7 @@
     </div>
     <div class="middle">
         <div class="left-side-panel">
-           <div class="img-div"><img id="profile-img" src="{% static 'Accounts/IMAGES/pfp.png'%}" alt="logo"></div>
+           <div class="img-div"><img id="profile-img" src=".{% static 'Accounts/IMAGES/pfp.png'%}" alt="logo"></div>
             <div class="options">
                 <div><a href="{% url 'Accounts:personal_info'%}"><button id="option">Personal Info</button></a></div>
                 <div><a href="#"><button id="option">Booking History</button></a></div>

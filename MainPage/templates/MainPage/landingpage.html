@@ -7,7 +7,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'MainPage/CSS/style.css' %}">
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Helvetica', monospace;
+        }
 
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        a {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        body {
+            border: 8px #7247a6 double;
+            border-radius: 20px;
+            background-size: cover;
+            box-sizing: border-box;
+            margin: 4px;
+            padding: 8px;
+            height: 100%;
+            background-color: antiquewhite;
+        }
+
+        .navbar {
+            border: 2px solid #f1cfcb;
+            border-radius: 12px;
+            background-color: #f1bcb6;
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navbar-logo {
+            width: 70px;
+            height: 70px;
+            padding: 10px 30px;
+        }
+
+        .left-navbar {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            justify-content: baseline;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .right-navbar {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            justify-content: end;
+            align-items: center;
+            margin-left: auto;
+            padding-right: 20px;
+        }
+
+        .right-navbar>div>a>button:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #profile-btn {
+            width: auto;
+            height: auto;
+            padding: 8px;
+            border: 0px;
+            border-radius: 12px;
+        }
+
+        #login-btn {
+            width: auto;
+            height: auto;
+            padding: 8px;
+            border: 0px;
+            border-radius: 8px;
+        }
+
+        /* Main page layout */
+        .mainpage {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-align: center;
+            height: 100%;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 25%;
+            width: 100%;
+            position: relative;
+        }
+
+
+        /* Slideshow container */
+        .img-slideshow {
+            display: flex;
+            position: relative;
+            width: 70%;
+            height: 400px;
+            overflow: hidden;
+            justify-content: space-around;
+            align-items: center;
+            margin: 8px;
+        }
+
+        .img-slideshow>img {
+            border-radius: 12px;
+            padding: 8px;
+            margin-left: 4px;
+            margin-right: 4px;
+
+        }
+
+        /* The slides */
+        .carousel-slide {
+            display: none;
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+            opacity: 0;
+            width: 80%;
+            /* Make sure the image fits well */
+            height: 500px;
+            margin: 12px;
+            border-radius: 12px;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+
+        }
+
+        .carousel-slide.prev {
+            display: block;
+            opacity: 1;
+            transform: translateX(-100%);
+            z-index: 0;
+            filter: blur(2px);
+        }
+
+        .carousel-slide.next {
+            display: block;
+            opacity: 1;
+            transform: translateX(100%);
+            z-index: 0;
+            filter: blur(2px);
+        }
+
+        /* About Us section */
+        .about-us {
+            background-color: lightblue;
+            height: 25%;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .about-us p {
+            margin: 0;
+        }
+
+        /* Reviews section */
+        .reviews {
+            background-color: lightgreen;
+            height: 25%;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .reviews p {
+            margin: 0;
+        }
+
+        /* Book Now section */
+        .book-now {
+            background-color: lightcoral;
+            height: 25%;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .book-now p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
