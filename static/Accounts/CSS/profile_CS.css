@@ -16,6 +16,7 @@
 * {
     font-family: 'Trebuchet MS','Helvetica',monospace;
 }
+
 a {
     color: black;
     background-color: transparent;
@@ -310,9 +311,7 @@ body {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-btn > a{
-    font-weight: 1000;
-}
+
 .nav-btn:hover{
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

@@ -469,6 +469,7 @@ body {
 
 /*veneupage.html*/
 .body-venuepage{
+    margin-top : 10px;
     border : 2px solid black;
     border-radius: 14px;
 }
@@ -478,11 +479,13 @@ body {
     margin: 10px;
     display: flex;
     flex-direction: row;
-
+    flex-wrap : wrap;
+    justify-content: space-between;
     border: 0px;
     border-radius: 18px;
-
 }
+
+
 
 
 .venuepage-info{
@@ -494,23 +497,26 @@ body {
 }
 
 
-
 .bottom-div{
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-
 }
 
 .calendar{
-    margin-left: 25px;
-    margin-right: auto;
+    width: 500px;
+    height: 400px;
+}
+#calendar{
+    width: 400px;
+    height: 300px;
 }
 
-#calendar-section{
-    padding: 15px;
-    margin-right: auto;
+.calendar > h2{
+    margin-left: 40px;
 }
+
+
 
 .ratings{
     margin-left: 20px;
@@ -550,7 +556,7 @@ body {
 .venuepage-info > a > button{
     border: 0px;
     border-radius: 4px;
-    padding: 8px;
+    padding: 10px;
 }
 
 .venuepage-info > a > button:hover{
