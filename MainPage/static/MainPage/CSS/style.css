@@ -1,5 +1,5 @@
 * {
-    font-family: 'Trebuchet MS','Helvetica',monospace;
+    font-family: 'Trebuchet MS', 'Helvetica', monospace;
 }
 
 ::-webkit-scrollbar {
@@ -71,7 +71,7 @@ body {
     padding-right: 20px;
 }
 
-.right-navbar > div > a > button:hover {
+.right-navbar>div>a>button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -126,14 +126,14 @@ body {
     overflow: hidden;
     justify-content: space-around;
     align-items: center;
-    margin: 8px ;
+    margin: 8px;
 }
 
-.img-slideshow > img{
+.img-slideshow>img {
     border-radius: 12px;
-   padding: 8px;
-   margin-left: 4px;
-   margin-right: 4px;
+    padding: 8px;
+    margin-left: 4px;
+    margin-right: 4px;
 
 }
 
@@ -143,7 +143,8 @@ body {
     position: absolute;
     transition: transform 0.5s ease-in-out;
     opacity: 0;
-    width: 80%; /* Make sure the image fits well */
+    width: 80%;
+    /* Make sure the image fits well */
     height: 500px;
     margin: 12px;
     border-radius: 12px;
@@ -154,7 +155,7 @@ body {
     opacity: 1;
     transform: translateX(0);
     z-index: 1;
-    
+
 }
 
 .carousel-slide.prev {
