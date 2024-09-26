@@ -8,5 +8,8 @@ def landing_view(request):
         '../media/venue_images/Arora-Gandhi_20.jpg',
         '../media/venue_images/Bal_Baral_and_Majumdar_15.jpg',
     ]
-    return render(request, 'MainPage/landingpage.html', {'images': image_list})
+    logo = [
+        '../media/logo/ayojan-logo1.jpg'
+    ]
+    return render(request, 'MainPage/landingpage.html', {'images': image_list, 'logo' : logo})
 

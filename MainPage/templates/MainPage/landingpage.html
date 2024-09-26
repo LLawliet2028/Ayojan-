@@ -372,8 +372,10 @@
     <div class="navbar">
 
         <div class="left-navbar">
-            <a href="{% url 'MainPage:mainpage'%}"><img id="navbar-logo"
-                    src="{% static 'MainPage/IMAGES/ayojan-logo1.jpg' %}" alt="logo">
+            <a href="{% url 'MainPage:mainpage'%}">
+                {% for logos in logo %}
+                <img id="navbar-logo" src="{% static logos %}" alt="logo">
+                {% endfor %}
             </a>
             <div class="nav-btn">
                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
