@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 #in the mainpage app URL goes like
 #        .../    just a slash.
 
-app_name = 'mainpage'
+app_name = 'MainPage'
 
 urlpatterns = [
     path("",views.landing_view,name="mainpage"),

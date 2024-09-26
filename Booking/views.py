@@ -175,7 +175,7 @@ def bookingform(request,venue_id=0):
                 total_price = total_price,
                 payment_status = "UNDECIDED",
             )
-            return redirect('mainpage:mainpage') #this will actually be redirected to payment page.
+            return redirect('MainPage:mainpage') #this will actually be redirected to payment page.
         
         
     else:   

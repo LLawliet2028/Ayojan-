@@ -34,7 +34,7 @@ def login_view(request):
         #check if the authenticate returns an object (if user exist) or None (if it doesn't)
         if user is not None:
             login(request, user)
-            return redirect('mainpage:mainpage')
+            return redirect('MainPage:mainpage')
         else:
             messages.error(request, 'Invalid Username or Password')
             return redirect('Accounts:login_view')
@@ -123,7 +123,7 @@ def activate_acc(request, uidb64, token):
         myuser.is_active=True
         myuser.save()
         login(request,myuser,backend='django.contrib.auth.backends.ModelBackend')
-        return redirect('mainpage:mainpage')
+        return redirect('MainPage:mainpage')
     else:
         return render(request,'activation_failed.html')
 
@@ -131,7 +131,7 @@ def activate_acc(request, uidb64, token):
 
 def signout(request):
     logout(request)
-    return redirect('mainpage:mainpage')
+    return redirect('MainPage:mainpage')
 
 
 def profile_info(request):
