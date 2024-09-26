@@ -84,11 +84,11 @@
             padding-right: 20px;
         }
 
-        .right-navbar>div>a>button:hover {
+        .profile-btn-icon:hover, .login-btn-icon:hover, .cart-btn-icon:hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
 
-        .nav-btn:hover {
+        .nav-btn:hover, .profile-btn-icon:hover, .login-btn-icon:hover, .cart-btn-icon:hover {
             background-color: white;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 8px;
@@ -404,6 +404,8 @@
             position: relative;
             top: -10px;
         }
+
+  
     </style>
 </head>
 
@@ -519,7 +521,7 @@
                     better day!"
                     <br>- Anil & Kavita Desai
                 </div>
-                
+
                 <div class="prof-image"><img id="pfp-img" src="{% static pfps.0 %}"></div>
             </div>
 
