@@ -60,9 +60,9 @@ def pay(request):
         "merchantTransactionId": shortuuid.uuid(),
         "merchantUserId": "MUID123",
         "amount": 100,  # query up the amount for the bookings data-base
-        "redirectUrl": f"http://127.0.0.1:8000/payment/paymentreturn/?token={encrypted_booking_ids}",
+        "redirectUrl": f"http://ayojan.vercel.app/payment/paymentreturn/?token={encrypted_booking_ids}",
         "redirectMode": "POST",
-        "callbackUrl": f"http://127.0.0.1:8000/payment/paymentreturn/?token={encrypted_booking_ids}",
+        "callbackUrl": f"http://ayojan.vercel.app/payment/paymentreturn/?token={encrypted_booking_ids}",
         "mobileNumber": "9999999999",
         "paymentInstrument": {
             "type": "PAY_PAGE"

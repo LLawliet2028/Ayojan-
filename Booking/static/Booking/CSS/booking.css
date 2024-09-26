@@ -25,20 +25,20 @@ a {
 }
 
 body {
-    border : 8px #7247a6 double;
+    /* border : 8px #7247a6 double;
     border-radius: 20px;
-    background-size: cover; /* Ensure the image covers the entire width */
+    background-size: cover; Ensure the image covers the entire width */
     box-sizing: border-box;
-    margin: 4px;
-    padding: 8px;
+    margin: 0px;
+    padding: 0px;
     height: 100%;
     background-color: antiquewhite;
 }
 
 /* {% load static %}*/
 .navbar {
-    border : 2px solid black;
-    border-radius: 12px;
+    /* border : 2px solid black;
+    border-radius: 12px; */
     background-color: #f1bcb6;
     display: flex;
     width: 100%;
@@ -125,6 +125,7 @@ body {
     padding: 8px;
 } */
 .search-container{
+    margin: 24px;
     padding: 8px;
     display: flex;
     justify-content: center;
@@ -341,7 +342,7 @@ body {
     display: flex;
     width : 350px;
     flex-direction: column;
-    border: 2px dashed black;
+    border: 2px solid black;
     border-radius: 18px;
 }
 
@@ -397,7 +398,6 @@ body {
 #calendar{
     width: 400px;
     height: 300px;
-    margin-left: auto;
 }
 .calendar > h2{
     margin-left: 80px;

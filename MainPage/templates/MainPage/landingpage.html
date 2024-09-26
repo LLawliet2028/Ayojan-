@@ -195,11 +195,11 @@
         .reviews {
             height: 25%;
             width: 100%;
-            padding-top : 20px;
-            padding-bottom : 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             box-sizing: border-box;
             display: flex;
-            flex-wrap : wrap;
+            flex-wrap: wrap;
             flex-direction: row;
             justify-content: center;
             align-items: center;
@@ -208,15 +208,17 @@
         .reviews p {
             margin: 0;
         }
-        .review{
+
+        .review {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right : auto;
+            margin-right: auto;
         }
-        .prof-image{
+
+        .prof-image {
             width: 200px;
-            height : 200px;
+            height: 200px;
             border-radius: 100px;
             background-color: white;
             margin: 8px;
@@ -234,32 +236,36 @@
         .book-now p {
             margin: 0;
         }
-        .text-a{
+
+        .text-a {
             font-size: 22px;
             text-align: center;
             font-weight: bold;
             padding-bottom: 10px;
         }
-        .text-a1{
+
+        .text-a1 {
             font-size: 17px;
             text-align: center;
             font-weight: bold;
             padding-bottom: 10px;
         }
-        .text-a2{
+
+        .text-a2 {
             font-size: 17px;
             text-align: center;
             font-weight: bold;
             padding-bottom: 10px;
         }
-        
-        .a-text-big{
+
+        .a-text-big {
             width: 70%;
             font-size: 15px;
             height: 150px;
             margin: 20px;
         }
-        .about-us{
+
+        .about-us {
             height: 600px;
             display: flex;
             flex-direction: row;
@@ -269,59 +275,93 @@
 
         }
 
-        .a-text-big1{
+        .a-text-big1 {
             padding: 12px;
             width: 40%;
             margin-left: 20px;
 
         }
-        .a-text-big2{
+
+        .a-text-big2 {
             padding: 12px;
             width: 40%;
         }
 
 
-        .bottom{
-            width : 100%;
-            height : 400px;
+        .bottom {
+            width: 100%;
+            height: 400px;
             background-color: lightcoral;
             display: flex;
-            flex-wrap : wrap;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
+
         .logo-div {
-            width : 100%;
-            height : 150px;
+            width: 100%;
+            height: 150px;
         }
-        .logo{
+
+        .logo {
             margin-left: auto;
-            width : 150px;
-            height : 150px;
+            width: 150px;
+            height: 150px;
         }
-        .info-box{
+
+        .info-box {
             display: flex;
             justify-content: end;
         }
+
         .random-stuff {
             margin: 4px;
         }
-        .random-stuff > input {
+
+        .random-stuff>input {
             border: 0px;
-            padding : 12px;
+            padding: 12px;
             border-radius: 6px;
         }
-        .random-stuff > button {
+
+        .random-stuff>button {
             padding: 12px;
             border: 0px;
             background-color: transparent;
             cursor: pointer;
+            margin-left: 12px;
         }
-        .contact-info{
+
+        .random-stuff>button:hover {
+            background-color: white;
+            box-shadow: 1px 1px 8px grey;
+            border-radius: 12px;
+        }
+
+        .contact-info {
             text-align: end;
-            margin-left : 200px;
+            margin-left: 200px;
         }
-        
+
+        .venue-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* semi-transparent black background */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        .img-slideshow:hover .venue-info {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -379,62 +419,87 @@
 
             <div class="a-text-big">
                 <div class="text-a">ARTICLES</div>
-                "Our experience with Ayojan was nothing short of phenomenal! From the very first consultation, we knew we were in good hands. The team was incredibly professional, organized, and focused on turning our dream event into reality. Every detail was meticulously planned, from the stunning décor to the flawless coordination of vendors and logistics. They worked closely with us throughout the planning process, offering valuable suggestions and ensuring that everything aligned with our vision. On the day of the event, everything went off without a hitch, and our guests couldn’t stop raving about how beautiful everything looked. The ambiance they created was magical, and we couldn’t be happier with the outcome. Ayojan exceeded our expectations in every way, and we’ll definitely be relying on them for future events. We highly recommend their services!"
+                "Our experience with Ayojan was nothing short of phenomenal! From the very first consultation, we knew
+                we were in good hands. The team was incredibly professional, organized, and focused on turning our dream
+                event into reality. Every detail was meticulously planned, from the stunning décor to the flawless
+                coordination of vendors and logistics. They worked closely with us throughout the planning process,
+                offering valuable suggestions and ensuring that everything aligned with our vision. On the day of the
+                event, everything went off without a hitch, and our guests couldn’t stop raving about how beautiful
+                everything looked. The ambiance they created was magical, and we couldn’t be happier with the outcome.
+                Ayojan exceeded our expectations in every way, and we’ll definitely be relying on them for future
+                events. We highly recommend their services!"
                 - Priya Sharma
             </div>
-        
+
             <div class="a-text-big1">
                 <div class="text-a1">ARTICLES</div>
-                "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with planning, but their team made the entire process stress-free. They handled every detail from venue selection to coordinating with vendors. Their communication was impeccable, and they ensured our vision was respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the celebration with our loved ones. We couldn’t have asked for a better team!"
+                "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with planning, but
+                their team made the entire process stress-free. They handled every detail from venue selection to
+                coordinating with vendors. Their communication was impeccable, and they ensured our vision was
+                respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the celebration
+                with our loved ones. We couldn’t have asked for a better team!"
                 - Rahul & Meera Singh
             </div>
-        
+
             <div class="a-text-big2">
                 <div class="text-a2">ARTICLES</div>
-                "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every logistical detail effortlessly, from venue selection to managing audiovisual needs. The event was a huge success, and everything was executed flawlessly. The atmosphere was elegant and professional, exactly what we wanted. Our employees and clients were highly impressed, and we received glowing feedback from attendees. Ayojan is now our go-to partner for all future company events!"
+                "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every
+                logistical detail effortlessly, from venue selection to managing audiovisual needs. The event was a huge
+                success, and everything was executed flawlessly. The atmosphere was elegant and professional, exactly
+                what we wanted. Our employees and clients were highly impressed, and we received glowing feedback from
+                attendees. Ayojan is now our go-to partner for all future company events!"
                 - Akash Patel, CEO
             </div>
-        
+
         </div>
-        
+
         <div class="reviews">
             <div class="review">
                 <div class="prof-image"></div>
                 <div class="a-text-big">
-                    "We hosted a birthday party at *Sapphire Grand Banquet*, and it was amazing! The venue was beautifully decorated, spacious, and the staff was very attentive. Our guests were impressed by the setup and the food. Everything went smoothly, and we didn’t have to worry about a thing. Highly recommend *Sapphire Grand* for any family event!"
+                    "We hosted a birthday party at *Sapphire Grand Banquet*, and it was amazing! The venue was
+                    beautifully decorated, spacious, and the staff was very attentive. Our guests were impressed by the
+                    setup and the food. Everything went smoothly, and we didn’t have to worry about a thing. Highly
+                    recommend *Sapphire Grand* for any family event!"
                     - Sunita Mehta
                 </div>
             </div>
-        
+
             <div class="review">
                 <div class="a-text-big">
-                    "We booked *Royal Orchid Palace* for our wedding, and it was simply perfect. The staff was professional and managed everything from start to finish. The decor was stunning, and the food was delicious. Our guests were blown away by the elegance of the venue. We couldn't have asked for a better day!"
+                    "We booked *Royal Orchid Palace* for our wedding, and it was simply perfect. The staff was
+                    professional and managed everything from start to finish. The decor was stunning, and the food was
+                    delicious. Our guests were blown away by the elegance of the venue. We couldn't have asked for a
+                    better day!"
                     - Anil & Kavita Desai
                 </div>
                 <div class="prof-image"></div>
             </div>
-        
+
             <div class="review">
                 <div class="prof-image"></div>
                 <div class="a-text-big">
-                    "I organized a corporate event at *Emerald Garden Lawn*, and the experience was flawless. The venue’s outdoor setting was perfect for our team. The staff handled the arrangements with great efficiency. From the catering to logistics, everything was well-coordinated. *Emerald Garden* is a wonderful choice for any corporate function."
+                    "I organized a corporate event at *Emerald Garden Lawn*, and the experience was flawless. The
+                    venue’s outdoor setting was perfect for our team. The staff handled the arrangements with great
+                    efficiency. From the catering to logistics, everything was well-coordinated. *Emerald Garden* is a
+                    wonderful choice for any corporate function."
                     - Rohit Sharma, Event Manager
                 </div>
             </div>
         </div>
-        
+
         <div class="bottom">
-            <div class = "logo-div"><img class = "logo" src ="{% static 'MainPage/IMAGES/ayojan-logo1.png' %}"></div>
+            <div class="logo-div"><img class="logo" src="{% static 'MainPage/IMAGES/ayojan-logo1.png' %}"></div>
             <div class="info-box">
-                <div class ="random-stuff">
+                <div class="random-stuff">
                     <input type="text" name="email" id="email"><button>submit</button>
                 </div>
                 <div class="contact-info">
-                    <div>99993242</div>
+                    <div>9999324992</div>
                     <div>ayojan.platform@gmail.com</div>
                     <div>Plot No. 42, Event Avenue, Sector 12, New Delhi, India</div>
                 </div>
-                
+
             </div>
         </div>
     </div>
