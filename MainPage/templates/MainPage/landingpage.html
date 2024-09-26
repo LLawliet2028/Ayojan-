@@ -494,7 +494,10 @@
         </div>
 
         <div class="bottom">
-            <div class="logo-div"><img class="logo" src="{% static 'MainPage/IMAGES/ayojan-logo1.jpg' %}"></div>
+            <div class="logo-div">
+                {% for logos in logo %}
+                <img class="logo" src="{% static logos %}"></div>
+                {% endfor %}
             <div class="info-box">
                 <div class="random-stuff">
                     <input type="text" name="email" id="email"><button>submit</button>
