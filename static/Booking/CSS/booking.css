@@ -398,7 +398,6 @@ body {
 #calendar{
     width: 400px;
     height: 300px;
-    margin-left: auto;
 }
 .calendar > h2{
     margin-left: 80px;

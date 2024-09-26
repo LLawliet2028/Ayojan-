@@ -70,26 +70,27 @@
 <main class="venue-section">
     <section class="venue-list">
         {% for venue in venues %}
-        <div class="venue-item">
-            <div class="venue-info">
-                <div class="venue-img">
-                    <img  id="img" src=".{{ venue.image.url }}" alt="venue">
+        <!-- <a id = "wrapper-link" href="{% url 'Booking:venuepage' venue.id %}"> -->
+            <div class="venue-item">
+                <div class="venue-info">
+                    <div class="venue-img">
+                        <img  id="img" src=".{{ venue.image.url }}" alt="venue">
+                    </div>
+                    <h2>{{ venue.venue_name }}</h2>
+                    <p>Location: {{ venue.city }}, {{ venue.state }}</p>
+                    <p>Price: {{ venue.base_price }}</p>
+                    
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'Booking:booking_form' venue.id %}"><button>Book Now</button></a>
+                    {% else %}
+                        <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
+                    {% endif %}
+
+                    <a href="{% url 'Booking:venuepage' venue.id %}"><button>View</button></a>
+                    <a href="{% url 'Booking:bookinglistadder' venue.id %}"><button>Add to Booking List</button></a>
                 </div>
-                <h2>{{ venue.venue_name }}</h2>
-                <p>Location: {{ venue.city }}, {{ venue.state }}</p>
-                <p>Price: {{ venue.base_price }}</p>
-                
-                {% if user.is_authenticated %}
-                    <a href="{% url 'Booking:booking_form' venue.id %}"><button>Book Now</button></a>
-                {% else %}
-                    <a href="{% url 'Accounts:login_view' %}"><button>login to Book</button></a>
-                {% endif %}
-
-                <a href="{% url 'Booking:venuepage' venue.id %}"><button>View</button></a>
-                <a href="{% url 'Booking:bookinglistadder' venue.id %}"><button>Add to Booking List</button></a>
             </div>
-
-        </div>
+        <!-- </a> -->
         {% endfor %}
     </section>
 

@@ -42,7 +42,9 @@
             margin: 0px;
             padding: 0px;
             height: 100%;
-            background-color: antiquewhite;
+            /* background: linear-gradient(to right, #f3d9d7,  #f1f1f1); */
+            background: linear-gradient(to left,  #f1f1f1,  #f7d0ce );
+            /* background-color: antiquewhite; */
         }
 
         .navbar {
@@ -222,6 +224,7 @@
             border-radius: 100px;
             background-color: white;
             margin: 8px;
+                  
         }
 
         /* Book Now section */
@@ -370,7 +373,7 @@
 
         <div class="left-navbar">
             <a href="{% url 'mainpage:mainpage'%}"><img id="navbar-logo"
-                    src="{% static 'MainPage/IMAGES/ayojan-logo1.png' %}" alt="logo">
+                    src="{% static 'MainPage/IMAGES/ayojan-logo1.jpg' %}" alt="logo">
             </a>
             <div class="nav-btn">
                 <a href="{% url 'Booking:bookingpage'%}">Venues</a>
@@ -489,7 +492,7 @@
         </div>
 
         <div class="bottom">
-            <div class="logo-div"><img class="logo" src="{% static 'MainPage/IMAGES/ayojan-logo1.png' %}"></div>
+            <div class="logo-div"><img class="logo" src="{% static 'MainPage/IMAGES/ayojan-logo1.jpg' %}"></div>
             <div class="info-box">
                 <div class="random-stuff">
                     <input type="text" name="email" id="email"><button>submit</button>
