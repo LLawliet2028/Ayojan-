@@ -41,10 +41,11 @@ body {
 }
 
 #navbar-logo {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 85px;
     padding: 10px 30px;
 }
+
 
 .left-navbar {
     display: flex;

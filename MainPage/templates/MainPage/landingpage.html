@@ -43,7 +43,7 @@
             padding: 0px;
             height: 100%;
             /* background: linear-gradient(to right, #f3d9d7,  #f1f1f1); */
-            background: linear-gradient(to left,  #f1f1f1,  #f7d0ce );
+            background: linear-gradient(to left, #f1f1f1, #f7d0ce);
             /* background-color: antiquewhite; */
         }
 
@@ -59,10 +59,11 @@
         }
 
         #navbar-logo {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 85px;
             padding: 10px 30px;
         }
+
 
         .left-navbar {
             display: flex;
@@ -224,7 +225,7 @@
             border-radius: 100px;
             background-color: white;
             margin: 8px;
-                  
+
         }
 
         /* Book Now section */
@@ -266,6 +267,9 @@
             font-size: 15px;
             height: 150px;
             margin: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
         }
 
         .about-us {
@@ -273,21 +277,47 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
 
         }
 
-        .a-text-big1 {
+        .verticle-text {
+            width: 10%;
+            font-size: 35px;
             padding: 12px;
-            width: 40%;
-            margin-left: 20px;
+            margin-left: 30px;
+            margin-bottom: 40px;
+        }
 
+        .verticle-text>div {
+            padding: 12px;
+        }
+
+        .text-wrapper {
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: 50px;
+        }
+
+        .a-text-big1 {
+            text-align: center;
+            padding: 12px;
+            width: 90%;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
         }
 
         .a-text-big2 {
+            text-align: center;
             padding: 12px;
-            width: 40%;
+            width: 80%;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
         }
 
 
@@ -303,7 +333,7 @@
 
         .logo-div {
             width: 100%;
-            height: 150px;
+            height: 180px;
         }
 
         .logo {
@@ -365,6 +395,15 @@
         .img-slideshow:hover .venue-info {
             opacity: 1;
         }
+
+        #pfp-img {
+            width: 228px;
+            height: 233px;
+            padding: 0px;
+            margin: 0px;
+            position: relative;
+            top: -10px;
+        }
     </style>
 </head>
 
@@ -421,46 +460,48 @@
             </div>
         </div>
         <div class="about-us">
-
-            <div class="a-text-big">
-                <div class="text-a">ARTICLES</div>
-                "Our experience with Ayojan was nothing short of phenomenal! From the very first consultation, we knew
-                we were in good hands. The team was incredibly professional, organized, and focused on turning our dream
-                event into reality. Every detail was meticulously planned, from the stunning décor to the flawless
-                coordination of vendors and logistics. They worked closely with us throughout the planning process,
-                offering valuable suggestions and ensuring that everything aligned with our vision. On the day of the
-                event, everything went off without a hitch, and our guests couldn’t stop raving about how beautiful
-                everything looked. The ambiance they created was magical, and we couldn’t be happier with the outcome.
-                Ayojan exceeded our expectations in every way, and we’ll definitely be relying on them for future
-                events. We highly recommend their services!"
-                - Priya Sharma
+            <div class="verticle-text">
+                <div>A</div>
+                <div>R</div>
+                <div>T</div>
+                <div>I</div>
+                <div>C</div>
+                <div>L</div>
+                <div>E</div>
+                <div>S</div>
+            </div>
+            <div class="text-wrapper">
+                <div class="a-text-big1">
+                    "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with planning,
+                    but
+                    their team made the entire process stress-free. They handled every detail from venue selection to
+                    coordinating with vendors. Their communication was impeccable, and they ensured our vision was
+                    respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the
+                    celebration
+                    with our loved ones. We couldn’t have asked for a better team!"
+                    <br>- Rahul & Meera Singh
+                </div>
+                <div class="a-text-big2">
+                    "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every
+                    logistical detail effortlessly, from venue selection to managing audiovisual needs. The event was a
+                    huge
+                    success, and everything was executed flawlessly. The atmosphere was elegant and professional,
+                    exactly
+                    what we wanted. Our employees and clients were highly impressed, and we received glowing feedback
+                    from
+                    attendees. Ayojan is now our go-to partner for all future company events!"
+                    <br>- Akash Patel, CEO
+                </div>
             </div>
 
-            <div class="a-text-big1">
-                <div class="text-a1">ARTICLES</div>
-                "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with planning, but
-                their team made the entire process stress-free. They handled every detail from venue selection to
-                coordinating with vendors. Their communication was impeccable, and they ensured our vision was
-                respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the celebration
-                with our loved ones. We couldn’t have asked for a better team!"
-                - Rahul & Meera Singh
-            </div>
-
-            <div class="a-text-big2">
-                <div class="text-a2">ARTICLES</div>
-                "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every
-                logistical detail effortlessly, from venue selection to managing audiovisual needs. The event was a huge
-                success, and everything was executed flawlessly. The atmosphere was elegant and professional, exactly
-                what we wanted. Our employees and clients were highly impressed, and we received glowing feedback from
-                attendees. Ayojan is now our go-to partner for all future company events!"
-                - Akash Patel, CEO
-            </div>
 
         </div>
 
         <div class="reviews">
             <div class="review">
-                <div class="prof-image"></div>
+                <div class="prof-image">
+                    <img id="pfp-img" src="{% static pfps.1 %}">
+                </div>
                 <div class="a-text-big">
                     "We hosted a birthday party at *Sapphire Grand Banquet*, and it was amazing! The venue was
                     beautifully decorated, spacious, and the staff was very attentive. Our guests were impressed by the
@@ -476,19 +517,20 @@
                     professional and managed everything from start to finish. The decor was stunning, and the food was
                     delicious. Our guests were blown away by the elegance of the venue. We couldn't have asked for a
                     better day!"
-                    - Anil & Kavita Desai
+                    <br>- Anil & Kavita Desai
                 </div>
-                <div class="prof-image"></div>
+                
+                <div class="prof-image"><img id="pfp-img" src="{% static pfps.0 %}"></div>
             </div>
 
             <div class="review">
-                <div class="prof-image"></div>
+                <div class="prof-image"><img id="pfp-img" src="{% static pfps.2 %}"></div>
                 <div class="a-text-big">
                     "I organized a corporate event at *Emerald Garden Lawn*, and the experience was flawless. The
                     venue’s outdoor setting was perfect for our team. The staff handled the arrangements with great
                     efficiency. From the catering to logistics, everything was well-coordinated. *Emerald Garden* is a
                     wonderful choice for any corporate function."
-                    - Rohit Sharma, Event Manager
+                    <br>- Rohit Sharma, Event Manager
                 </div>
             </div>
         </div>
@@ -496,8 +538,10 @@
         <div class="bottom">
             <div class="logo-div">
                 {% for logos in logo %}
-                <img class="logo" src="{% static logos %}"></div>
+                <img class="logo" src="{% static logos %}">
                 {% endfor %}
+            </div>
+
             <div class="info-box">
                 <div class="random-stuff">
                     <input type="text" name="email" id="email"><button>submit</button>
@@ -546,6 +590,44 @@
 
         // Automatically switch to the next slide every 5 seconds
         setInterval(nextSlide, 5000);
+
+    </script>
+    <script>
+        function truncateText(selector, maxWidth, maxChars) {
+            const elements = document.querySelectorAll(selector);
+            const windowWidth = window.innerWidth;
+
+            elements.forEach(element => {
+                // Store the original text if not already stored
+                if (!element.getAttribute('data-full-text')) {
+                    element.setAttribute('data-full-text', element.textContent);
+                }
+
+                const originalText = element.getAttribute('data-full-text');
+
+                // If window width is less than maxWidth, truncate the text
+                if (windowWidth < maxWidth) {
+                    if (originalText.length > maxChars) {
+                        element.textContent = originalText.substring(0, maxChars) + '...';
+                    }
+                } else {
+                    // Restore the original full text if window width exceeds maxWidth
+                    element.textContent = originalText;
+                }
+            });
+        }
+
+        function applyTruncate() {
+            truncateText('.review > .a-text-big', 1000, 100);
+            truncateText('.about-us > .text-wrapper > .a-text-big', 1000, 100);
+            truncateText('.about-us > .text-wrapper > .a-text-big1', 1000, 100);
+            truncateText('.about-us > .text-wrapper > .a-text-big2', 1000, 100);
+        }
+
+        // Apply truncation on window load and resize
+        window.addEventListener('resize', applyTruncate);
+        window.addEventListener('load', applyTruncate);
+
 
     </script>
 </body>
