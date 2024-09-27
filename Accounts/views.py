@@ -13,7 +13,6 @@ from django.contrib.auth.decorators import login_required
 
 
 #below funciton loads up profile_view html
-@login_required
 def profile_view(request):
     user = request.user
     if not user.is_authenticated:  

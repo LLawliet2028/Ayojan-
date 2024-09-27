@@ -38,7 +38,7 @@ def search_page(request):
 
 
 #below i have created the booking form funciton this grabs the data from the form and created a booking in database.
-@login_required
+
 def bookingform(request,venue_id=0):
     if request.method == "POST":
         #additionally this handels the updation of incomplete forms
@@ -199,7 +199,7 @@ def venuepage(request,venue_id):
 
 #The below function adds the Venue to be Booked without any details with just user and what venue
 #other details can be taken care of at the Cartpage
-@login_required
+
 def bookinglistadder(request,venue_id):
     user = request.user
     venue = get_object_or_404(Venues, pk=venue_id)
@@ -272,7 +272,7 @@ def search_suggestions_prof(request):
 
 
 #This funtion confirms that all the feild in all the user's bookings are filled
-@login_required
+
 def checkout_verification(request):
     booking_ids = request.POST.getlist('booking_ids')
     bookings = Booking.objects.filter(id__in=booking_ids)
@@ -381,7 +381,7 @@ def professionalsbookingform(request,professional_id):
         return render(request, 'Booking/professionalsbooking_form.html',{'professional':professional})
     
 
-@login_required
+
 def professionalsbookinglistadder(request,professional_id):
     user = request.user
     professional = get_object_or_404(Professional, pk=professional_id)
