@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="{% static 'MainPage/CSS/style.css' %}"> -->
+    
     <style>
+        
         * {
             font-family: 'Trebuchet MS', 'Helvetica', monospace;
         }
@@ -186,13 +187,13 @@
         }
 
         /* About Us section */
-        .about-us {
+        /* .about-us {
             background-color: #f1bcb6;
             height: 25%;
             width: 100%;
             padding: 40px;
             box-sizing: border-box;
-        }
+        } */
 
         /* Reviews section */
         .reviews {
@@ -264,25 +265,59 @@
 
         .a-text-big {
             width: 70%;
-            font-size: 15px;
             height: 150px;
             margin: 20px;
             display: flex;
             justify-content: center;
-            font-size: 18px;
+            font-size: 21px;
         }
 
         .about-us {
+            position: relative;
             height: 600px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-
+            overflow: hidden;
+        }
+        
+        .about-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.pexels.com/photos/811572/pexels-photo-811572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(2px) brightness(0.7); 
+            z-index: 1;
+        }
+        
+        .about-us > * {
+            position: relative; 
+            z-index: 2;
         }
 
-        .verticle-text {
+        .linear-gradient {
+            padding-left: 35rem;
+            /* /* filter: brightness(0.5); */
+             color: white;  
+            /* grid: 30%; */
+            /* text-align: center; */
+            font-size: 4rem;
+            margin-top: 0px;
+        }
+        .div linear-gradient{
+            padding-left: 12px;
+            grid: 30%;
+        }
+
+        /* .verticle-text {
             width: 10%;
             font-size: 35px;
             padding: 12px;
@@ -292,32 +327,46 @@
 
         .verticle-text>div {
             padding: 12px;
-        }
+        } */
 
         .text-wrapper {
-            width: 70%;
+            /* width: 70%; */
             display: flex;
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             justify-content: center;
+            font-size: 4px;
+            margin-bottom: 50px;
+            
             margin-right: 50px;
         }
-
+        
         .a-text-big1 {
             text-align: center;
             padding: 12px;
             width: 90%;
             margin-left: 20px;
-            margin-bottom: 20px;
-            font-size: 18px;
+            color: white; 
+            /* margin-bottom: 20px; */
+            font-size: 24px;
         }
-
+        
         .a-text-big2 {
-            text-align: center;
-            padding: 12px;
+            /* text-align: center; */
+            padding-left: 12rem;
+            color: white; 
             width: 80%;
             margin-left: 20px;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 24px;
+        }
+        
+        /* New classes for text alignment */
+        .text-left {
+            text-align: left;
+        }
+        
+        .text-right {
+            text-align: right;
         }
 
 
@@ -397,16 +446,18 @@
         }
 
         #pfp-img {
-            width: 228px;
-            height: 233px;
-            padding: 0px;
-            margin: 0px;
-            position: relative;
-            top: -10px;
-        }
+    width: 200px; /* Adjust the size as needed */
+    height: 207px; /* Adjust the size as needed */
+    border-radius: 49%;
+    object-fit: cover;
+}
+        
 
   
+    
     </style>
+    <!-- <link rel="stylesheet" href="{% static 'MainPage/CSS/style.css' %}"> -->
+
 </head>
 
 <body>
@@ -462,37 +513,37 @@
             </div>
         </div>
         <div class="about-us">
-            <div class="verticle-text">
-                <div>A</div>
-                <div>R</div>
-                <div>T</div>
-                <div>I</div>
-                <div>C</div>
-                <div>L</div>
-                <div>E</div>
-                <div>S</div>
+            <div class="linear-gradient">
+                <div>A R T I C L E S</div>
+
             </div>
-            <div class="text-wrapper">
-                <div class="a-text-big1">
-                    "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with planning,
-                    but
-                    their team made the entire process stress-free. They handled every detail from venue selection to
-                    coordinating with vendors. Their communication was impeccable, and they ensured our vision was
-                    respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the
-                    celebration
-                    with our loved ones. We couldn’t have asked for a better team!"
-                    <br>- Rahul & Meera Singh
-                </div>
-                <div class="a-text-big2">
-                    "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every
-                    logistical detail effortlessly, from venue selection to managing audiovisual needs. The event was a
-                    huge
-                    success, and everything was executed flawlessly. The atmosphere was elegant and professional,
-                    exactly
-                    what we wanted. Our employees and clients were highly impressed, and we received glowing feedback
-                    from
-                    attendees. Ayojan is now our go-to partner for all future company events!"
-                    <br>- Akash Patel, CEO
+            <div>
+                <div class="text-wrapper">
+                    <div class="a-text-big1">
+                        "Ayojan was a lifesaver for our wedding! My partner and I had no idea where to begin with
+                        planning,
+                        but
+                        their team made the entire process stress-free. They handled every detail from venue selection
+                        to
+                        coordinating with vendors. Their communication was impeccable, and they ensured our vision was
+                        respected. On the big day, we didn’t have to worry about a thing, allowing us to enjoy the
+                        celebration
+                        with our loved ones. We couldn’t have asked for a better team!"
+                        <br>- Rahul & Meera Singh
+                    </div>
+                    <div class="a-text-big2">
+                        "For our corporate gala, choosing Ayojan was the best decision we made. Their team handled every
+                        logistical detail effortlessly, from venue selection to managing audiovisual needs. The event
+                        was a
+                        huge
+                        success, and everything was executed flawlessly. The atmosphere was elegant and professional,
+                        exactly
+                        what we wanted. Our employees and clients were highly impressed, and we received glowing
+                        feedback
+                        from
+                        attendees. Ayojan is now our go-to partner for all future company events!"
+                        <br>- Akash Patel, CEO
+                    </div>
                 </div>
             </div>
 
@@ -502,36 +553,26 @@
         <div class="reviews">
             <div class="review">
                 <div class="prof-image">
-                    <img id="pfp-img" src="{% static pfps.1 %}">
+                    <img id="pfp-img" src="https://media.gettyimages.com/id/1313502972/photo/portrait-of-beautiful-woman-having-fun.jpg?s=612x612&w=0&k=20&c=DHGWp3wIoSlpjK9xFdARpgpyo4t-hIzuqOSx5ZyRsHA=">
                 </div>
                 <div class="a-text-big">
-                    "We hosted a birthday party at *Sapphire Grand Banquet*, and it was amazing! The venue was
-                    beautifully decorated, spacious, and the staff was very attentive. Our guests were impressed by the
-                    setup and the food. Everything went smoothly, and we didn’t have to worry about a thing. Highly
-                    recommend *Sapphire Grand* for any family event!"
-                    - Sunita Mehta
+                    "We hosted a birthday party at Sapphire Grand Banquet, and it was amazing! The venue was beautifully decorated, spacious, and the staff was very attentive. Our guests were impressed by the setup and the food. Everything went smoothly, and we didn’t have to worry about a thing. The event management team ensured every detail was taken care of, making it a stress-free experience. Highly recommend Sapphire Grand for any family event!" - Sunita Mehta
                 </div>
             </div>
 
             <div class="review">
                 <div class="a-text-big">
-                    "We booked *Royal Orchid Palace* for our wedding, and it was simply perfect. The staff was
-                    professional and managed everything from start to finish. The decor was stunning, and the food was
-                    delicious. Our guests were blown away by the elegance of the venue. We couldn't have asked for a
-                    better day!"
+                    "We booked Royal Orchid Palace for our wedding, and it was simply perfect. The staff was professional and managed everything from start to finish. The decor was stunning, and the food was delicious. Our guests were blown away by the elegance of the venue. The event coordinators took care of every little detail, allowing us to fully enjoy our special day without any stress. We couldn't have asked for a better day!"
                     <br>- Anil & Kavita Desai
                 </div>
 
-                <div class="prof-image"><img id="pfp-img" src="{% static pfps.0 %}"></div>
+                <div class="prof-image"><img id="pfp-img" src="https://media.gettyimages.com/id/1293903541/photo/young-woman-stock-photo.jpg?s=612x612&w=0&k=20&c=AvQGpGDrH-0nUNAL-uHuc1uidcTiiLbovyKJjsN_mOk="></div>
             </div>
 
             <div class="review">
-                <div class="prof-image"><img id="pfp-img" src="{% static pfps.2 %}"></div>
+                <div class="prof-image"><img id="pfp-img" src="data:image/jpeg;base64,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"></div>
                 <div class="a-text-big">
-                    "I organized a corporate event at *Emerald Garden Lawn*, and the experience was flawless. The
-                    venue’s outdoor setting was perfect for our team. The staff handled the arrangements with great
-                    efficiency. From the catering to logistics, everything was well-coordinated. *Emerald Garden* is a
-                    wonderful choice for any corporate function."
+                    "I organized a corporate event at Emerald Garden Lawn, and the experience was flawless. The venue’s outdoor setting was perfect for our team. The staff handled the arrangements with great efficiency. From the catering to logistics, everything was well-coordinated. The event management team ensured that everything ran smoothly, allowing us to focus on the event itself. Emerald Garden is a wonderful choice for any corporate function."
                     <br>- Rohit Sharma, Event Manager
                 </div>
             </div>
@@ -545,11 +586,9 @@
             </div>
 
             <div class="info-box">
-                <div class="random-stuff">
-                    <input type="text" name="email" id="email"><button>submit</button>
-                </div>
+
                 <div class="contact-info">
-                    <div>9999324992</div>
+                    <div>6371032763</div>
                     <div>ayojan.platform@gmail.com</div>
                     <div>Plot No. 42, Event Avenue, Sector 12, New Delhi, India</div>
                 </div>
